@@ -36,7 +36,9 @@ function SeoPage() {
             <p className="mt-8 max-w-2xl text-lg text-ink-soft">
               Een strakke website zonder bezoekers heeft weinig zin. Met SEO zorgen
               we dat klanten je vinden wanneer ze zoeken — zonder dat je per klik
-              betaalt. Bij elke website is een stevige SEO-basis inbegrepen.
+              betaalt. En omdat steeds meer mensen zoeken via AI, richten we je site
+              ook in op GEO en AEO: vindbaar in ChatGPT, Perplexity en Google's
+              AI-overzichten. Bij elke website is een stevige basis inbegrepen.
             </p>
           </Reveal>
         </div>
@@ -55,6 +57,38 @@ function SeoPage() {
               </Reveal>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="px-6 py-20 lg:px-10">
+        <div className="mx-auto max-w-[1400px]">
+          <SectionLabel>Zoeken verandert</SectionLabel>
+          <h2 className="mt-6 font-display text-4xl leading-[1.05] text-ink md:text-6xl">
+            Niet alleen Google.
+            <br />
+            <span className="italic text-accent">Ook AI.</span>
+          </h2>
+          <p className="mt-6 max-w-2xl text-ink-soft">
+            Steeds meer mensen stellen hun vraag aan ChatGPT, Perplexity of Google's
+            AI-overzichten in plaats van te scrollen door zoekresultaten. Wij zorgen
+            dat jouw bedrijf ook dáár wordt gevonden en aanbevolen — niet alleen in de
+            klassieke zoekresultaten.
+          </p>
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {[
+              ["SEO", "Search Engine Optimization", "Hoog in de klassieke zoekresultaten van Google, zonder per klik te betalen."],
+              ["GEO", "Generative Engine Optimization", "Genoemd en aanbevolen worden in antwoorden van AI zoals ChatGPT en Perplexity."],
+              ["AEO", "Answer Engine Optimization", "Direct als antwoord verschijnen op concrete vragen — in featured snippets en AI-overzichten."],
+            ].map(([abbr, full, body]) => (
+              <Reveal key={abbr}>
+                <div className="h-full rounded-2xl border border-ink/10 bg-surface/40 p-8">
+                  <div className="font-display text-3xl text-ink">{abbr}</div>
+                  <div className="mt-1 text-xs uppercase tracking-[0.2em] text-ink-soft">{full}</div>
+                  <p className="mt-4 text-ink-soft">{body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

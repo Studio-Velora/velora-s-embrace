@@ -160,8 +160,9 @@ function Home() {
                 <span className="italic text-accent">op Google.</span>
               </h2>
               <p className="mt-6 max-w-md text-ink-soft">
-                Een strakke website zonder bezoekers heeft weinig zin. Met SEO zorgen
-                we dat klanten je vinden wanneer ze zoeken naar wat jij aanbiedt.
+                Een strakke website zonder bezoekers heeft weinig zin. Met SEO én GEO
+                zorgen we dat klanten je vinden wanneer ze zoeken naar wat jij
+                aanbiedt — op Google én in AI-zoekmachines zoals ChatGPT.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/seo" className="rounded-full bg-ink px-6 py-3 text-sm text-background hover:bg-accent">
