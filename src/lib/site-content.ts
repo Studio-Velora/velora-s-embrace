@@ -68,6 +68,7 @@ export const FEATURES = [
   ["Meertaligheid", "Site in meerdere talen"],
   ["iDEAL betaling", "Veilig betalen"],
   ["AI chatbot", "24/7 automatisch antwoord"],
+  ["AI-vindbaarheid (GEO)", "Gevonden in ChatGPT & co"],
   ["Analytics", "Inzicht in bezoekers"],
   ["Nieuwsbrief", "E-maillijst opbouwen"],
   ["Automatisering", "Mails bij acties"],
@@ -169,7 +170,11 @@ export const FAQ = [
   },
   {
     q: "Doen jullie ook SEO?",
-    a: "Bij elke website is een SEO-basis inbegrepen. Wil je verder groeien, dan bieden we doorlopende SEO, adverteren (SEA) en social media advertising.",
+    a: "Bij elke website is een SEO-basis inbegrepen — inclusief de basis voor GEO en AEO, zodat je ook vindbaar bent in AI-zoekmachines. Wil je verder groeien, dan bieden we doorlopende SEO, GEO, adverteren (SEA) en social media advertising.",
+  },
+  {
+    q: "Wat is GEO en waarom is het belangrijk?",
+    a: "GEO (Generative Engine Optimization) zorgt dat je bedrijf ook genoemd en aanbevolen wordt in AI-antwoorden — denk aan ChatGPT, Perplexity en Google's AI-overzichten. Steeds meer mensen zoeken zo, en wij richten je site zo in dat AI-zoekmachines je goed begrijpen en doorverwijzen.",
   },
   {
     q: "Betaal ik alles vooraf?",
@@ -181,7 +186,8 @@ export const SEO_STEPS = [
   ["01", "Zoekwoordenonderzoek", "We achterhalen waar jouw klanten écht op zoeken."],
   ["02", "Technische SEO", "Snelle laadtijd, nette code en mobiel-first."],
   ["03", "Lokale SEO", "Google Bedrijfsprofiel en lokale vindbaarheid."],
-  ["04", "Content & meten", "Sterke teksten en Search Console."],
+  ["04", "GEO & AEO", "Ook gevonden worden in AI-antwoorden van ChatGPT, Perplexity en Google's AI-overzichten."],
+  ["05", "Content & meten", "Sterke teksten en Search Console."],
 ] as const;
 
 export const CONTACT = {
