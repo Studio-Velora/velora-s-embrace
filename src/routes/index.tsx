@@ -1,29 +1,346 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import { Hero } from "@/components/site/Hero";
+import { Marquee } from "@/components/site/Marquee";
+import { ServiceStack, ServiceStackMobile } from "@/components/site/ServiceStack";
+import { BentoFeatures } from "@/components/site/BentoFeatures";
+import { ProcessTimeline } from "@/components/site/ProcessTimeline";
+import { TestimonialMarquee } from "@/components/site/TestimonialMarquee";
+import { FaqList } from "@/components/site/FaqList";
+import { Reveal, RevealWords } from "@/components/site/Reveal";
+import { SectionLabel, ParallaxY } from "@/components/site/Section";
+import { Magnetic } from "@/components/site/Magnetic";
+import { AUDIENCES, PROMISES, SEO_STEPS, CONTACT } from "@/lib/site-content";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Velora" },
-      { name: "description", content: "Velora — a Lovable app." },
-      { property: "og:title", content: "Velora" },
-      { property: "og:description", content: "Velora — a Lovable app." },
+      { title: "Studio Velora — Digitaal design & development studio" },
+      {
+        name: "description",
+        content:
+          "Snelle websites en webshops voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
+      },
+      { property: "og:title", content: "Studio Velora — Digitaal design & development studio" },
+      {
+        property: "og:description",
+        content:
+          "We bouwen schaalbare digitale producten met doordacht design en zorgvuldige ontwikkeling.",
+      },
     ],
   }),
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const PARTNERS = ["Stripe", "iDEAL", "Mollie", "Shopify", "Wero", "Google", "Search Console", "Cloudflare"];
+
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+
+      {/* Trust marquee */}
+      <section className="border-y border-ink/10 bg-background py-6">
+        <Marquee
+          duration={50}
+          items={PARTNERS.map((p) => (
+            <span
+              key={p}
+              className="font-display text-3xl text-ink/40 transition-colors hover:text-accent md:text-5xl"
+            >
+              {p}
+            </span>
+          ))}
+        />
+      </section>
+
+      {/* Over ons */}
+      <section className="relative bg-background py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <div className="grid gap-16 md:grid-cols-2">
+            <div className="md:sticky md:top-32 md:self-start">
+              <SectionLabel>Over ons</SectionLabel>
+              <h2 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+                <RevealWords text="Gebouwd voor" />
+                <br />
+                <span className="italic">
+                  <RevealWords text="lokale" wordClassName="text-accent" />
+                </span>{" "}
+                <RevealWords text="ondernemers." />
+              </h2>
+            </div>
+            <div className="space-y-8">
+              <Reveal>
+                <p className="text-lg text-ink-soft md:text-xl">
+                  Studio Velora is een digitaal design & development studio. Geen
+                  grote agency met hoge overhead, maar directe samenwerking met de
+                  persoon die jouw website bouwt.
+                </p>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="text-lg text-ink-soft md:text-xl">
+                  We bouwen websites en webshops die er niet alleen strak uitzien,
+                  maar ook echt werken: snel laden, goed gevonden op Google, en
+                  ontworpen om bezoekers om te zetten in klanten.
+                </p>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <div className="flex flex-wrap gap-2 pt-4">
+                  {[
+                    "Maatwerk design",
+                    "Persoonlijk contact",
+                    "Vaste prijzen",
+                    "Meertalig",
+                    "SEO inbegrepen",
+                    "Mobile-first",
+                  ].map((b) => (
+                    <span
+                      key={b}
+                      className="rounded-full border border-ink/15 bg-surface/40 px-4 py-2 text-sm text-ink"
+                    >
+                      {b}
+                    </span>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Diensten — horizontal pinned scroll */}
+      <ServiceStack />
+      <ServiceStackMobile />
+
+      {/* Mogelijkheden */}
+      <section className="relative bg-background py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <SectionLabel>Mogelijkheden</SectionLabel>
+              <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+                Alles mogelijk.
+                <br />
+                <span className="italic text-accent">Niets te veel.</span>
+              </h2>
+            </div>
+            <p className="max-w-md text-ink-soft">
+              Van een eenvoudige contactpagina tot een volledig klantportaal met AI.
+              Een greep uit wat we bouwen.
+            </p>
+          </div>
+          <BentoFeatures />
+          <Reveal className="mt-12 flex flex-wrap items-center gap-4">
+            <Link
+              to="/mogelijkheden"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-background"
+            >
+              Ontdek alle mogelijkheden
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+            <Link
+              to="/offerte"
+              className="rounded-full border border-ink/20 px-6 py-3 text-sm text-ink hover:bg-ink hover:text-background"
+            >
+              Vraag het ons
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SEO sectie met parallax */}
+      <section className="relative overflow-hidden bg-surface py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <div className="grid gap-16 md:grid-cols-2">
+            <div className="md:sticky md:top-32 md:self-start">
+              <SectionLabel>SEO · GEO · AEO</SectionLabel>
+              <h2 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+                Gevonden worden
+                <br />
+                <span className="italic text-accent">op Google.</span>
+              </h2>
+              <p className="mt-6 max-w-md text-ink-soft">
+                Een strakke website zonder bezoekers heeft weinig zin. Met SEO zorgen
+                we dat klanten je vinden wanneer ze zoeken naar wat jij aanbiedt.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="/seo" className="rounded-full bg-ink px-6 py-3 text-sm text-background hover:bg-accent">
+                  Meer over SEO
+                </Link>
+              </div>
+            </div>
+            <div className="space-y-12">
+              {SEO_STEPS.map(([n, t, b], i) => (
+                <div key={n} className="relative grid grid-cols-[1fr_2fr] items-start gap-6">
+                  <ParallaxY amount={40 + i * 10}>
+                    <div className="font-display text-7xl text-accent/30 md:text-9xl">
+                      {n}
+                    </div>
+                  </ParallaxY>
+                  <Reveal>
+                    <h3 className="font-display text-2xl text-ink md:text-3xl">{t}</h3>
+                    <p className="mt-2 text-ink-soft">{b}</p>
+                  </Reveal>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Werkwijze */}
+      <section className="bg-background py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <div className="mb-20">
+            <SectionLabel>Werkwijze</SectionLabel>
+            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+              Van gesprek
+              <br />
+              <span className="italic">tot </span>
+              <span className="italic text-accent">live website.</span>
+            </h2>
+          </div>
+          <ProcessTimeline />
+        </div>
+      </section>
+
+      {/* Voor wie */}
+      <section className="bg-surface py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <div className="mb-16">
+            <SectionLabel>Voor wie</SectionLabel>
+            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+              Welke bedrijven
+              <br />
+              <span className="italic text-accent">helpen wij?</span>
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {AUDIENCES.map(([t, b], i) => (
+              <motion.div
+                key={t}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ delay: (i % 4) * 0.06, duration: 0.6 }}
+                className="group relative overflow-hidden rounded-2xl border border-ink/10 bg-background p-6"
+              >
+                <div className="text-xs text-ink-soft">{String(i + 1).padStart(2, "0")}</div>
+                <h3 className="mt-3 font-display text-2xl text-ink">{t}</h3>
+                <p className="mt-2 text-sm text-ink-soft">{b}</p>
+                <div className="pointer-events-none absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-accent/0 blur-2xl transition-all duration-500 group-hover:bg-accent/40" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-background py-32 md:py-40">
+        <div className="mx-auto mb-12 max-w-[1400px] px-6 lg:px-10">
+          <SectionLabel>Ervaringen</SectionLabel>
+          <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+            Wat klanten <span className="italic text-accent">zeggen.</span>
+          </h2>
+        </div>
+        <TestimonialMarquee />
+      </section>
+
+      {/* Belofte */}
+      <section className="bg-ink py-32 text-background md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <SectionLabel>
+            <span className="text-background/60">Onze belofte</span>
+          </SectionLabel>
+          <h2 className="mt-6 font-display text-5xl leading-[1.05] md:text-7xl">
+            Jij neemt <span className="italic text-accent">geen risico.</span>
+          </h2>
+          <div className="mt-16 grid gap-4 md:grid-cols-4">
+            {PROMISES.map(([t, b], i) => (
+              <motion.div
+                key={t}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ delay: i * 0.08, duration: 0.7 }}
+                className="group relative overflow-hidden rounded-2xl border border-background/15 p-8"
+              >
+                <div className="font-display text-2xl">{t}</div>
+                <p className="mt-3 text-sm text-background/70">{b}</p>
+                <div className="pointer-events-none absolute inset-x-0 -bottom-px h-px scale-x-0 bg-accent transition-transform duration-700 group-hover:scale-x-100" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-background py-32 md:py-48">
+        <div className="mx-auto max-w-[1100px] px-6 lg:px-10">
+          <SectionLabel>FAQ</SectionLabel>
+          <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+            Veelgestelde <span className="italic text-accent">vragen.</span>
+          </h2>
+          <div className="mt-16">
+            <FaqList />
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative overflow-hidden bg-surface py-32 md:py-48">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+          <SectionLabel>Klaar om te beginnen?</SectionLabel>
+          <h2 className="mt-6 font-display text-[12vw] leading-[0.95] tracking-tight text-ink md:text-[7vw]">
+            <RevealWords text="Jouw website kan" />
+            <br />
+            <span className="italic">
+              <RevealWords text="dit weekend" wordClassName="text-accent" />
+            </span>
+            <br />
+            <RevealWords text="live zijn." />
+          </h2>
+          <Reveal delay={0.3} className="mt-12 flex flex-wrap items-center gap-3">
+            <Magnetic strength={25}>
+              <Link
+                to="/offerte"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-8 py-5 text-base text-background"
+              >
+                <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
+                <span className="relative">Gratis offerte aanvragen</span>
+                <span className="relative">→</span>
+              </Link>
+            </Magnetic>
+            <Magnetic strength={20}>
+              <Link
+                to="/contact"
+                className="rounded-full border border-ink/20 px-8 py-5 text-base text-ink hover:bg-ink hover:text-background"
+              >
+                Liever even sparren?
+              </Link>
+            </Magnetic>
+          </Reveal>
+
+          <Reveal delay={0.4} className="mt-16 grid gap-6 border-t border-ink/10 pt-12 md:grid-cols-3">
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-ink-soft">Bel direct</div>
+              <a href={CONTACT.phoneHref} className="mt-2 block font-display text-2xl text-ink hover:text-accent">
+                {CONTACT.phone}
+              </a>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-ink-soft">E-mail</div>
+              <a href={`mailto:${CONTACT.email}`} className="mt-2 block font-display text-2xl text-ink hover:text-accent">
+                {CONTACT.email}
+              </a>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-ink-soft">Beschikbaarheid</div>
+              <div className="mt-2 font-display text-2xl text-ink">{CONTACT.hours}</div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
