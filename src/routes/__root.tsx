@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Studio Velora — Digitaal design & development studio" },
+      { name: "description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
+      { property: "og:description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
+      { name: "twitter:description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4a4220ae-413f-4dc8-b7a6-ef86ba57ac9e/id-preview-2700496c--a4b518c4-718f-445e-b842-1a86bc0abe27.lovable.app-1781131761725.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4a4220ae-413f-4dc8-b7a6-ef86ba57ac9e/id-preview-2700496c--a4b518c4-718f-445e-b842-1a86bc0abe27.lovable.app-1781131761725.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
