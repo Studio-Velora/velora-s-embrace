@@ -92,23 +92,25 @@ function SeoPage() {
         </div>
       </section>
 
-      <section className="bg-ink px-6 py-32 text-background lg:px-10">
+      <section className="px-6 py-20 lg:px-10">
         <div className="mx-auto max-w-[1400px]">
-          <h2 className="font-display text-5xl leading-[1.05] md:text-7xl">
-            Verder groeien?
-            <br />
-            <span className="italic text-accent">We helpen.</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-background/70">
-            Doorlopende SEO, content, Search Console-analyses en social ads — we
-            denken mee over wat past bij jouw doel en budget.
-          </p>
-          <Link
-            to="/offerte"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm text-accent-foreground"
-          >
-            Vraag een quickscan →
-          </Link>
+          <div className="rounded-[2.5rem] bg-ink px-8 py-24 text-background md:px-16">
+            <h2 className="font-display text-5xl leading-[1.05] md:text-7xl">
+              Verder groeien?
+              <br />
+              <span className="italic text-accent">We helpen.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-background/70">
+              Doorlopende SEO, content, Search Console-analyses en social ads — we
+              denken mee over wat past bij jouw doel en budget.
+            </p>
+            <Link
+              to="/offerte"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-9 py-5 text-base font-semibold text-accent-foreground"
+            >
+              Vraag een quickscan →
+            </Link>
+          </div>
         </div>
       </section>
     </article>

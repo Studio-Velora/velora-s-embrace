@@ -54,19 +54,19 @@ export function Header() {
         <Magnetic strength={15} className="hidden md:block">
           <Link
             to="/offerte"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-5 py-2.5 text-sm text-background"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-6 py-3 text-sm font-semibold text-background"
           >
             <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-            <span className="relative">Gratis offerte</span>
+            <span className="relative">Plan een gesprek</span>
             <span className="relative">→</span>
           </Link>
         </Magnetic>
 
         <Link
           to="/offerte"
-          className="rounded-full bg-ink px-4 py-2 text-xs text-background md:hidden"
+          className="rounded-full bg-ink px-4 py-2 text-xs font-semibold text-background md:hidden"
         >
-          Offerte
+          Gesprek
         </Link>
       </div>
     </motion.header>

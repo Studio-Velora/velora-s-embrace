@@ -172,9 +172,9 @@ function Home() {
             </div>
             <div className="space-y-12">
               {SEO_STEPS.map(([n, t, b], i) => (
-                <div key={n} className="relative grid grid-cols-[1fr_2fr] items-start gap-6">
-                  <ParallaxY amount={40 + i * 10}>
-                    <div className="font-display text-7xl text-accent/30 md:text-9xl">
+                <div key={n} className="relative grid grid-cols-[auto_1fr] items-center gap-6">
+                  <ParallaxY amount={14 + i * 4}>
+                    <div className="w-[1.7em] font-display text-6xl leading-none text-accent/30 md:text-8xl">
                       {n}
                     </div>
                   </ParallaxY>
@@ -233,6 +233,20 @@ function Home() {
               </motion.div>
             ))}
           </div>
+          <Reveal className="mt-12 flex flex-col items-start gap-5 rounded-2xl border border-ink/10 bg-background p-8 md:flex-row md:items-center md:justify-between">
+            <p className="max-w-2xl text-lg text-ink-soft">
+              <span className="font-semibold text-ink">Staat jouw branche er niet tussen?</span>{" "}
+              Geen zorgen — dit is maar een greep. Of je nu een winkel, praktijk,
+              vereniging of iets compleet anders hebt: we helpen{" "}
+              <span className="font-semibold text-accent">elk</span> bedrijf online groeien.
+            </p>
+            <Link
+              to="/offerte"
+              className="shrink-0 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-background transition-colors hover:bg-accent"
+            >
+              Plan een gesprek →
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -308,7 +322,7 @@ function Home() {
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-8 py-5 text-base text-background"
               >
                 <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-                <span className="relative">Gratis offerte aanvragen</span>
+                <span className="relative">Plan een kennismakingsgesprek</span>
                 <span className="relative">→</span>
               </Link>
             </Magnetic>
