@@ -315,7 +315,7 @@ function Home() {
             <br />
             <RevealWords text="live zijn." />
           </h2>
-          <Reveal delay={0.3} className="mt-12 flex flex-wrap items-center gap-3">
+          <Reveal delay={0.3} className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Magnetic strength={25}>
               <Link
                 to="/offerte"

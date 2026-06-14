@@ -59,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
           >
             <Magnetic strength={20}>
               <Link

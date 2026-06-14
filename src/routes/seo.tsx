@@ -45,15 +45,15 @@ function SeoPage() {
       </section>
 
       <section className="px-6 py-20 lg:px-10">
-        <div className="mx-auto grid max-w-[1400px] gap-16 md:grid-cols-2">
+        <div className="mx-auto grid max-w-[1400px] gap-12 md:grid-cols-2">
           {SEO_STEPS.map(([n, t, b], i) => (
-            <div key={n} className="relative">
+            <div key={n} className="relative overflow-hidden">
               <ParallaxY amount={40 + i * 8}>
-                <div className="font-display text-[12rem] leading-none text-accent/20">{n}</div>
+                <div className="absolute -top-6 left-0 select-none font-display text-[8rem] leading-none text-accent/15 md:text-[10rem]">{n}</div>
               </ParallaxY>
-              <Reveal>
-                <h3 className="font-display text-3xl text-ink md:text-4xl">{t}</h3>
-                <p className="mt-3 max-w-md text-ink-soft">{b}</p>
+              <Reveal className="relative pt-14">
+                <h3 className="font-display text-2xl text-ink md:text-3xl">{t}</h3>
+                <p className="mt-2 text-ink-soft">{b}</p>
               </Reveal>
             </div>
           ))}

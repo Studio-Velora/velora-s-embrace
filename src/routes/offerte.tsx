@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, RevealWords } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/Section";
@@ -57,6 +57,11 @@ function Offerte() {
 
   const total = 4;
   const progress = ((step + 1) / total) * 100;
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [step]);
 
   function toggleFeature(f: string) {
     setData((d) => ({
@@ -147,7 +152,7 @@ function Offerte() {
         <div className="mx-auto max-w-[1100px] space-y-4">
 
           {/* Stap content — alleen dit blok animeert per stap */}
-          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-background">
+          <div ref={formRef} className="overflow-hidden rounded-3xl border border-ink/10 bg-background">
             <div className="p-8 md:p-14 min-h-[480px]">
               <AnimatePresence mode="wait">
                 {done ? (
