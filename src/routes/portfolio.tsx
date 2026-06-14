@@ -90,11 +90,11 @@ const STUDIES: Study[] = [
 function Portfolio() {
   return (
     <article>
-      <section className="px-6 pt-40 pb-16 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 pt-40 pb-16 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <SectionLabel>Werk</SectionLabel>
-          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem]">
-            <RevealWords text="Websites die" />
+          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">
+            <RevealWords text="Websites die" />{" "}
             <br />
             <span className="italic">
               <RevealWords text="resultaat" wordClassName="text-accent" />
@@ -112,8 +112,8 @@ function Portfolio() {
       </section>
 
       {/* Projecten */}
-      <section className="px-6 pb-24 lg:px-10">
-        <div className="mx-auto grid max-w-[1400px] gap-6 md:grid-cols-2">
+      <section className="px-6 pb-24 lg:px-12">
+        <div className="mx-auto grid max-w-[1600px] gap-6 md:grid-cols-2">
           {PROJECTS.map((p, i) => (
             <motion.div
               key={p.name}
@@ -155,8 +155,8 @@ function Portfolio() {
       </section>
 
       {/* Case studies */}
-      <section className="px-6 pb-28 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 pb-28 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <div className="mb-12">
             <SectionLabel>Case studies</SectionLabel>
             <h2 className="mt-6 font-display text-4xl leading-[1.05] text-ink md:text-6xl">
@@ -215,8 +215,8 @@ function Portfolio() {
       </section>
 
       {/* Prominente CTA — zoals image3 */}
-      <section className="px-6 pb-32 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 pb-32 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <Reveal className="relative overflow-hidden rounded-[2.5rem] bg-accent px-8 py-20 text-center text-accent-foreground md:px-16">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-foreground/70">
               Jouw project hierna?

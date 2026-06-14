@@ -21,11 +21,11 @@ export const Route = createFileRoute("/seo")({
 function SeoPage() {
   return (
     <article>
-      <section className="px-6 pt-40 pb-20 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 pt-40 pb-20 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <SectionLabel>SEO · GEO · AEO</SectionLabel>
-          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem]">
-            <RevealWords text="Gevonden" />
+          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">
+            <RevealWords text="Gevonden" />{" "}
             <br />
             <RevealWords text="worden op" />{" "}
             <span className="italic">
@@ -44,8 +44,8 @@ function SeoPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-10">
-        <div className="mx-auto grid max-w-[1400px] gap-12 md:grid-cols-2">
+      <section className="px-6 py-20 lg:px-12">
+        <div className="mx-auto grid max-w-[1600px] gap-12 md:grid-cols-2">
           {SEO_STEPS.map(([n, t, b], i) => (
             <div key={n} className="relative overflow-hidden">
               <ParallaxY amount={40 + i * 8}>
@@ -60,11 +60,11 @@ function SeoPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 py-20 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <SectionLabel>Zoeken verandert</SectionLabel>
           <h2 className="mt-6 font-display text-4xl leading-[1.05] text-ink md:text-6xl">
-            Niet alleen Google.
+            Niet alleen Google.{" "}
             <br />
             <span className="italic text-accent">Ook AI.</span>
           </h2>
@@ -92,11 +92,11 @@ function SeoPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 py-20 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <div className="rounded-[2.5rem] bg-ink px-8 py-24 text-background md:px-16">
-            <h2 className="font-display text-5xl leading-[1.05] md:text-7xl">
-              Verder groeien?
+            <h2 className="font-display text-5xl leading-[1.05] md:text-7xl xl:text-8xl">
+              Verder groeien?{" "}
               <br />
               <span className="italic text-accent">We helpen.</span>
             </h2>

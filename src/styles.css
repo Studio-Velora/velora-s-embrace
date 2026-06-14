@@ -43,6 +43,7 @@
 
 :root {
   --radius: 1rem;
+  --app-safe-top: max(3.75rem, env(safe-area-inset-top, 0px));
 
   /* Warm editorial palette */
   --background: oklch(0.972 0.022 80);       /* #FBF6EC cream */
@@ -146,6 +147,80 @@
     font-family: var(--font-display);
     font-feature-settings: "ss01";
     letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  main :where(p, li, a, button, label, input, textarea, select):not(.section-label, .section-label *) {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  main :where(.text-xs, .text-sm):not(.section-label, .section-label *) {
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+  }
+
+  main :where(.text-base):not(.section-label, .section-label *) {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  main :where(.text-lg):not(.section-label, .section-label *) {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (min-width: 768px) {
+    main :where(p, li, a, button, label, input, textarea, select):not(.section-label, .section-label *) {
+      font-size: 1.125rem !important;
+      line-height: 1.65 !important;
+    }
+
+    main :where(.text-xs, .text-sm):not(.section-label, .section-label *) {
+      font-size: 1rem !important;
+      line-height: 1.55 !important;
+    }
+
+    main :where(.text-base):not(.section-label, .section-label *) {
+      font-size: 1.125rem !important;
+      line-height: 1.65 !important;
+    }
+
+    main :where(.text-lg):not(.section-label, .section-label *) {
+      font-size: 1.25rem !important;
+      line-height: 1.65 !important;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    main :where(p, li, a, button, label, input, textarea, select):not(.section-label, .section-label *) {
+      font-size: 1.25rem !important;
+      line-height: 1.65 !important;
+    }
+
+    main :where(.text-xs, .text-sm):not(.section-label, .section-label *) {
+      font-size: 1.0625rem !important;
+      line-height: 1.55 !important;
+    }
+
+    main :where(.text-base):not(.section-label, .section-label *) {
+      font-size: 1.25rem !important;
+      line-height: 1.65 !important;
+    }
+
+    main :where(.text-lg):not(.section-label, .section-label *) {
+      font-size: 1.375rem !important;
+      line-height: 1.65 !important;
+    }
+  }
+
+  h1 :where(a, span),
+  h2 :where(a, span),
+  h3 :where(a, span),
+  .section-label,
+  .section-label * {
+    line-height: inherit;
   }
 }
 

@@ -22,11 +22,11 @@ export const Route = createFileRoute("/contact")({
 function Contact() {
   return (
     <article>
-      <section className="px-6 pt-40 pb-20 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 pt-40 pb-20 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <SectionLabel>Contact</SectionLabel>
-          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem]">
-            <RevealWords text="Liever even" />
+          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">
+            <RevealWords text="Liever even" />{" "}
             <br />
             <span className="italic">
               <RevealWords text="sparren?" wordClassName="text-accent" />
@@ -41,8 +41,8 @@ function Contact() {
         </div>
       </section>
 
-      <section className="px-6 pb-32 lg:px-10">
-        <div className="mx-auto grid max-w-[1400px] gap-6 md:grid-cols-3">
+      <section className="px-6 pb-32 lg:px-12">
+        <div className="mx-auto grid max-w-[1600px] gap-6 md:grid-cols-3">
           <ContactCard
             label="Bel direct"
             value={CONTACT.phone}

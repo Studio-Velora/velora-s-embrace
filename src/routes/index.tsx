@@ -56,12 +56,12 @@ function Home() {
 
       {/* Over ons */}
       <section className="relative bg-background py-32 md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="grid gap-16 md:grid-cols-2">
             <div className="md:sticky md:top-32 md:self-start">
               <SectionLabel>Over ons</SectionLabel>
-              <h2 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-                <RevealWords text="Gebouwd voor" />
+              <h2 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl xl:text-8xl">
+                <RevealWords text="Gebouwd voor" />{" "}
                 <br />
                 <span className="italic">
                   <RevealWords text="lokale" wordClassName="text-accent" />
@@ -114,12 +114,12 @@ function Home() {
 
       {/* Mogelijkheden */}
       <section className="relative bg-background py-32 md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div>
               <SectionLabel>Mogelijkheden</SectionLabel>
-              <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-                Alles mogelijk.
+              <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl xl:text-8xl">
+                Alles mogelijk.{" "}
                 <br />
                 <span className="italic text-accent">Niets te veel.</span>
               </h2>
@@ -150,12 +150,12 @@ function Home() {
 
       {/* SEO sectie met parallax */}
       <section className="relative overflow-hidden bg-surface py-32 md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="grid gap-16 md:grid-cols-2">
             <div className="min-w-0 md:sticky md:top-32 md:self-start">
               <SectionLabel>SEO · GEO · AEO</SectionLabel>
-              <h2 className="mt-8 font-display text-4xl leading-[1.05] text-ink sm:text-5xl md:text-7xl">
-                Gevonden worden
+              <h2 className="mt-8 font-display text-4xl leading-[1.05] text-ink sm:text-5xl md:text-7xl xl:text-8xl">
+                Gevonden worden{" "}
                 <br />
                 <span className="italic text-accent">op Google.</span>
               </h2>
@@ -191,11 +191,11 @@ function Home() {
 
       {/* Werkwijze */}
       <section className="bg-background py-32 md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="mb-20">
             <SectionLabel>Werkwijze</SectionLabel>
-            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-              Van gesprek
+            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl xl:text-8xl">
+              Van gesprek{" "}
               <br />
               <span className="italic">tot </span>
               <span className="italic text-accent">live website.</span>
@@ -207,11 +207,11 @@ function Home() {
 
       {/* Voor wie */}
       <section className="bg-surface py-32 md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <div className="mb-16">
             <SectionLabel>Voor wie</SectionLabel>
-            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-              Welke bedrijven
+            <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl xl:text-8xl">
+              Welke bedrijven{" "}
               <br />
               <span className="italic text-accent">helpen wij?</span>
             </h2>
@@ -252,9 +252,9 @@ function Home() {
 
       {/* Testimonials */}
       <section className="bg-background py-32 md:py-40">
-        <div className="mx-auto mb-12 max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto mb-12 max-w-[1600px] px-6 lg:px-12">
           <SectionLabel>Ervaringen</SectionLabel>
-          <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+          <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl xl:text-8xl">
             Wat klanten <span className="italic text-accent">zeggen.</span>
           </h2>
         </div>
@@ -263,11 +263,11 @@ function Home() {
 
       {/* Belofte */}
       <section className="bg-ink py-32 text-background md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <SectionLabel>
             <span className="text-background/60">Onze belofte</span>
           </SectionLabel>
-          <h2 className="mt-6 font-display text-5xl leading-[1.05] md:text-7xl">
+          <h2 className="mt-6 font-display text-5xl leading-[1.05] md:text-7xl xl:text-8xl">
             Jij neemt <span className="italic text-accent">geen risico.</span>
           </h2>
           <div className="mt-16 grid gap-4 md:grid-cols-4">
@@ -293,7 +293,7 @@ function Home() {
       <section className="bg-background py-32 md:py-48">
         <div className="mx-auto max-w-[1100px] px-6 lg:px-10">
           <SectionLabel>FAQ</SectionLabel>
-          <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+          <h2 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl xl:text-8xl">
             Veelgestelde <span className="italic text-accent">vragen.</span>
           </h2>
           <div className="mt-16">
@@ -304,14 +304,14 @@ function Home() {
 
       {/* Final CTA */}
       <section className="relative overflow-hidden bg-surface py-32 md:py-48">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
           <SectionLabel>Klaar om te beginnen?</SectionLabel>
           <h2 className="mt-6 font-display text-[12vw] leading-[0.95] tracking-tight text-ink md:text-[7vw]">
-            <RevealWords text="Jouw website kan" />
+            <RevealWords text="Jouw website kan" />{" "}
             <br />
             <span className="italic">
               <RevealWords text="dit weekend" wordClassName="text-accent" />
-            </span>
+            </span>{" "}
             <br />
             <RevealWords text="live zijn." />
           </h2>

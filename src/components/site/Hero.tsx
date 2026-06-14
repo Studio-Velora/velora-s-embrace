@@ -20,7 +20,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[calc(100vh-8rem)] max-w-[1400px] flex-col justify-between px-6 lg:px-10">
+      <div className="relative mx-auto flex min-h-[calc(100vh-8rem)] max-w-[1600px] flex-col justify-between px-6 lg:px-12">
         <div className="pt-12">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -35,12 +35,12 @@ export function Hero() {
             Studio · Beschikbaar voor nieuwe projecten
           </motion.div>
 
-          <h1 className="mt-8 font-display text-[14vw] leading-[0.92] tracking-tight text-ink md:text-[8.5vw] lg:text-[7.5rem]">
-            <RevealWords text="Digitaal design" />
+          <h1 className="mt-8 font-display text-[14vw] leading-[1.04] tracking-tight text-ink md:text-[8.5vw] lg:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">
+            <RevealWords text="Digitaal design" />{" "}
             <br />
             <span className="italic">
               <RevealWords text="& development" wordClassName="text-accent" />
-            </span>
+            </span>{" "}
             <br />
             <RevealWords text="studio." />
           </h1>
@@ -49,7 +49,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
-            className="mt-8 max-w-xl text-lg text-ink-soft"
+            className="mt-8 max-w-2xl text-lg text-ink-soft xl:text-xl"
           >
             We helpen ondernemers en bedrijven schaalbare digitale producten bouwen —
             met doordacht design en zorgvuldige ontwikkeling.
@@ -88,16 +88,16 @@ export function Hero() {
           transition={{ delay: 1.6, duration: 1 }}
           className="mt-16 pb-10"
         >
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 shadow-sm">
+          <div className="flex flex-wrap items-center gap-4 text-lg">
+            <span className="inline-flex items-center gap-3 rounded-full border border-ink/10 bg-surface/70 px-7 py-3.5 shadow-sm">
               <span className="text-ink-soft">Websites</span>
               <strong className="font-semibold text-accent">vanaf €750</strong>
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 shadow-sm">
+            <span className="inline-flex items-center gap-3 rounded-full border border-ink/10 bg-surface/70 px-7 py-3.5 shadow-sm">
               <span className="text-ink-soft">Webshops</span>
               <strong className="font-semibold text-accent">vanaf €2.500</strong>
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-ink-soft shadow-sm">
+            <span className="inline-flex items-center gap-2.5 rounded-full border border-ink/10 bg-surface/70 px-7 py-3.5 text-ink-soft shadow-sm">
               <span className="font-bold text-emerald-600">✓</span> SEO inbegrepen
             </span>
           </div>

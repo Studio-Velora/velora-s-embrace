@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-ink-soft">
-      <span className="h-px w-8 bg-ink-soft" />
+    <div className="section-label flex items-center gap-4 text-base uppercase tracking-[0.24em] text-ink-soft md:text-lg xl:text-xl">
+      <span className="h-px w-10 bg-ink-soft md:w-12" />
       {children}
     </div>
   );

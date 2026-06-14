@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+import { Fragment, useRef, type ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
@@ -40,20 +40,23 @@ export function RevealWords({
   return (
     <span ref={ref} className={className}>
       {words.map((w, i) => (
-        <span key={i} className="inline-block overflow-hidden align-top pr-[0.25em] pb-[0.18em] -mb-[0.18em]">
-          <motion.span
-            className={`inline-block ${wordClassName ?? ""}`}
-            initial={{ y: "110%" }}
-            animate={inView ? { y: "0%" } : {}}
-            transition={{
-              duration: 0.85,
-              delay: i * 0.06,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
-            {w}
-          </motion.span>
-        </span>
+        <Fragment key={`${w}-${i}`}>
+          <span className="inline-block overflow-visible align-baseline">
+            <motion.span
+              className={`inline-block ${wordClassName ?? ""}`}
+              initial={{ y: "0.7em", opacity: 0 }}
+              animate={inView ? { y: "0em", opacity: 1 } : {}}
+              transition={{
+                duration: 0.85,
+                delay: i * 0.06,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              {w}
+            </motion.span>
+          </span>
+          {i < words.length - 1 ? " " : null}
+        </Fragment>
       ))}
     </span>
   );

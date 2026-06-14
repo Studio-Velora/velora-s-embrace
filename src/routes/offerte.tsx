@@ -136,12 +136,13 @@ function Offerte() {
 
   return (
     <article>
-      <section className="px-6 pt-40 pb-12 lg:px-10">
+      <section className="px-6 pt-40 pb-12 lg:px-12">
         <div className="mx-auto max-w-[1100px]">
           <SectionLabel>Offerte</SectionLabel>
-          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-ink md:text-7xl">
+          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-ink md:text-7xl xl:text-8xl 2xl:text-[9rem]">
             <RevealWords text="Vraag een" />{" "}
             <span className="italic"><RevealWords text="vrijblijvende" wordClassName="text-accent" /></span>
+            {" "}
             <br />
             <RevealWords text="offerte aan." />
           </h1>
@@ -154,7 +155,7 @@ function Offerte() {
         </div>
       </section>
 
-      <section className="px-6 pb-32 lg:px-10">
+      <section className="px-6 pb-32 lg:px-12">
         <div className="mx-auto max-w-[1100px] space-y-4">
 
           {/* Stap content — alleen dit blok animeert per stap */}

@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer ref={ref} className="relative overflow-hidden bg-ink text-background">
-      <div className="mx-auto max-w-[1400px] px-6 pt-24 pb-12 lg:px-10">
+      <div className="mx-auto max-w-[1600px] px-6 pt-24 pb-12 lg:px-12">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="font-display text-3xl">Studio Velora</div>

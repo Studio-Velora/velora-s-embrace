@@ -57,12 +57,12 @@ export const Route = createFileRoute("/mogelijkheden")({
 function Mogelijkheden() {
   return (
     <article>
-      <section className="px-6 pt-40 pb-20 lg:px-10">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="px-6 pt-40 pb-20 lg:px-12">
+        <div className="mx-auto max-w-[1600px]">
           <SectionLabel>Mogelijkheden</SectionLabel>
-          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem]">
+          <h1 className="mt-6 font-display text-6xl leading-[1.02] text-ink md:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">
             <RevealWords text="Alles" />{" "}
-            <RevealWords text="mogelijk." />
+            <RevealWords text="mogelijk." />{" "}
             <br />
             <span className="italic">
               <RevealWords text="Niets te" wordClassName="text-accent" />
@@ -84,8 +84,8 @@ function Mogelijkheden() {
       </section>
 
       {/* Detail per mogelijkheid: uitleg + voorbeeld + icoon */}
-      <section className="px-6 pb-32 lg:px-10">
-        <div className="mx-auto grid max-w-[1400px] gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="px-6 pb-32 lg:px-12">
+        <div className="mx-auto grid max-w-[1600px] gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {MOGELIJKHEDEN.map((m, i) => (
             <Reveal key={m.title} delay={(i % 3) * 0.05}>
               <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
@@ -105,8 +105,8 @@ function Mogelijkheden() {
         </div>
       </section>
 
-      <section className="bg-surface px-6 py-32 lg:px-10">
-        <div className="mx-auto max-w-[1400px] text-center">
+      <section className="bg-surface px-6 py-32 lg:px-12">
+        <div className="mx-auto max-w-[1600px] text-center">
           <h2 className="font-display text-4xl text-ink md:text-6xl">
             Iets specifieks nodig?
           </h2>
