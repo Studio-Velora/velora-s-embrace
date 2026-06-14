@@ -60,7 +60,13 @@ function Offerte() {
   const formRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const el = formRef.current;
+    if (!el) return;
+    // Scroll zo dat de bovenkant van het vakje (incl. de vraag) onder de
+    // vaste header valt — anders dekt de header de eerste regels af.
+    const headerOffset = 110;
+    const top = el.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top, behavior: "smooth" });
   }, [step]);
 
   function toggleFeature(f: string) {

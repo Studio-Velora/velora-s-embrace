@@ -152,9 +152,9 @@ function Home() {
       <section className="relative overflow-hidden bg-surface py-32 md:py-48">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
           <div className="grid gap-16 md:grid-cols-2">
-            <div className="md:sticky md:top-32 md:self-start">
+            <div className="min-w-0 md:sticky md:top-32 md:self-start">
               <SectionLabel>SEO · GEO · AEO</SectionLabel>
-              <h2 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+              <h2 className="mt-8 font-display text-4xl leading-[1.05] text-ink sm:text-5xl md:text-7xl">
                 Gevonden worden
                 <br />
                 <span className="italic text-accent">op Google.</span>
@@ -170,16 +170,16 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="space-y-12">
+            <div className="min-w-0 space-y-12">
               {SEO_STEPS.map(([n, t, b], i) => (
-                <div key={n} className="relative grid grid-cols-[auto_1fr] items-center gap-6">
+                <div key={n} className="relative grid grid-cols-[auto_1fr] items-center gap-5 sm:gap-6">
                   <ParallaxY amount={14 + i * 4}>
-                    <div className="w-[1.7em] font-display text-6xl leading-none text-accent/30 md:text-8xl">
+                    <div className="w-[1.3em] font-display text-5xl leading-none text-accent/30 sm:w-[1.7em] sm:text-6xl md:text-8xl">
                       {n}
                     </div>
                   </ParallaxY>
-                  <Reveal>
-                    <h3 className="font-display text-2xl text-ink md:text-3xl">{t}</h3>
+                  <Reveal className="min-w-0">
+                    <h3 className="font-display text-2xl leading-tight text-ink [hyphens:auto] md:text-3xl">{t}</h3>
                     <p className="mt-2 text-ink-soft">{b}</p>
                   </Reveal>
                 </div>
@@ -315,7 +315,7 @@ function Home() {
             <br />
             <RevealWords text="live zijn." />
           </h2>
-          <Reveal delay={0.3} className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <Reveal delay={0.3} className="mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-4">
             <Magnetic strength={25}>
               <Link
                 to="/offerte"

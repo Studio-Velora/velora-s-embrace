@@ -131,6 +131,10 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
+    /* Vangnet: voorkomt dat losse elementen (titels, tijdlijn, header) een
+       paar px buiten beeld vallen en horizontaal laten scrollen op mobiel.
+       'clip' i.p.v. 'hidden' zodat letter-descenders niet worden afgesneden. */
+    overflow-x: clip;
   }
 
   ::selection {
