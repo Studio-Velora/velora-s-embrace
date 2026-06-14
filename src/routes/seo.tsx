@@ -45,15 +45,15 @@ function SeoPage() {
       </section>
 
       <section className="px-6 py-20 lg:px-10">
-        <div className="mx-auto grid max-w-[1400px] gap-16 md:grid-cols-2">
+        <div className="mx-auto grid max-w-[1400px] gap-12 md:grid-cols-2">
           {SEO_STEPS.map(([n, t, b], i) => (
-            <div key={n} className="relative">
+            <div key={n} className="relative overflow-hidden">
               <ParallaxY amount={40 + i * 8}>
-                <div className="font-display text-[12rem] leading-none text-accent/20">{n}</div>
+                <div className="absolute -top-6 left-0 select-none font-display text-[8rem] leading-none text-accent/15 md:text-[10rem]">{n}</div>
               </ParallaxY>
-              <Reveal>
-                <h3 className="font-display text-3xl text-ink md:text-4xl">{t}</h3>
-                <p className="mt-3 max-w-md text-ink-soft">{b}</p>
+              <Reveal className="relative pt-14">
+                <h3 className="font-display text-2xl text-ink md:text-3xl">{t}</h3>
+                <p className="mt-2 text-ink-soft">{b}</p>
               </Reveal>
             </div>
           ))}
@@ -92,23 +92,25 @@ function SeoPage() {
         </div>
       </section>
 
-      <section className="bg-ink px-6 py-32 text-background lg:px-10">
+      <section className="px-6 py-20 lg:px-10">
         <div className="mx-auto max-w-[1400px]">
-          <h2 className="font-display text-5xl leading-[1.05] md:text-7xl">
-            Verder groeien?
-            <br />
-            <span className="italic text-accent">We helpen.</span>
-          </h2>
-          <p className="mt-6 max-w-xl text-background/70">
-            Doorlopende SEO, content, Search Console-analyses en social ads — we
-            denken mee over wat past bij jouw doel en budget.
-          </p>
-          <Link
-            to="/offerte"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm text-accent-foreground"
-          >
-            Vraag een quickscan →
-          </Link>
+          <div className="rounded-[2.5rem] bg-ink px-8 py-24 text-background md:px-16">
+            <h2 className="font-display text-5xl leading-[1.05] md:text-7xl">
+              Verder groeien?
+              <br />
+              <span className="italic text-accent">We helpen.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-background/70">
+              Doorlopende SEO, content, Search Console-analyses en social ads — we
+              denken mee over wat past bij jouw doel en budget.
+            </p>
+            <Link
+              to="/offerte"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-9 py-5 text-base font-semibold text-accent-foreground"
+            >
+              Vraag een quickscan →
+            </Link>
+          </div>
         </div>
       </section>
     </article>

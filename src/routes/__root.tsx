@@ -77,7 +77,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      // viewport-meta staat statisch in RootShell <head> (zie onder) zodat
+      // Safari viewport-fit=cover bij de eerste parse vastlegt en niet tijdens
+      // hydratie verstoord raakt. Hier dus NIET nogmaals opnemen.
       { title: "Studio Velora — Digitaal design & development studio" },
       {
         name: "description",
@@ -119,6 +121,9 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="nl">
       <head>
+        {/* Statisch & als eerste — Safari legt viewport-fit=cover bij de eerste
+            parse vast (nodig om áchter het Dynamic Island te kunnen tekenen). */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <HeadContent />
       </head>
       <body className="grain">

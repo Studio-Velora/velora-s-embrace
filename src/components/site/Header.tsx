@@ -21,11 +21,20 @@ export function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3 backdrop-blur-md" : "py-6"
+        scrolled ? "pb-3" : "pb-5"
       }`}
       style={{
-        backgroundColor: scrolled ? "color-mix(in oklab, var(--background) 75%, transparent)" : "transparent",
-        borderBottom: scrolled ? "1px solid color-mix(in oklab, var(--ink) 8%, transparent)" : "1px solid transparent",
+        // Altijd een dichte achtergrond die tot de fysieke schermtop doorloopt.
+        // Samen met viewport-fit=cover vult deze de zone áchter het Dynamic
+        // Island, zodat er nooit een gat of doorschijnende strook ontstaat.
+        // max() gebruikt op iPhone de Island-hoogte i.p.v. die ERBIJ op te tellen.
+        paddingTop: scrolled
+          ? "max(0.75rem, env(safe-area-inset-top))"
+          : "max(1rem, env(safe-area-inset-top))",
+        backgroundColor: "var(--background)",
+        borderBottom: scrolled
+          ? "1px solid color-mix(in oklab, var(--ink) 8%, transparent)"
+          : "1px solid transparent",
       }}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-10">
@@ -54,20 +63,13 @@ export function Header() {
         <Magnetic strength={15} className="hidden md:block">
           <Link
             to="/offerte"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-5 py-2.5 text-sm text-background"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-6 py-3 text-sm font-semibold text-background"
           >
             <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-            <span className="relative">Gratis offerte</span>
+            <span className="relative">Plan een gesprek</span>
             <span className="relative">→</span>
           </Link>
         </Magnetic>
-
-        <Link
-          to="/offerte"
-          className="rounded-full bg-ink px-4 py-2 text-xs text-background md:hidden"
-        >
-          Offerte
-        </Link>
       </div>
     </motion.header>
   );

@@ -59,22 +59,22 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-4"
           >
             <Magnetic strength={20}>
               <Link
                 to="/offerte"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-7 py-4 text-sm text-background"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-9 py-5 text-base font-semibold text-background"
               >
                 <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-                <span className="relative">Gratis offerte</span>
+                <span className="relative">Plan een gesprek</span>
                 <span className="relative transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </Magnetic>
             <Magnetic strength={15}>
               <Link
                 to="/portfolio"
-                className="rounded-full border border-ink/20 px-7 py-4 text-sm text-ink transition-colors hover:border-ink hover:bg-ink hover:text-background"
+                className="rounded-full border border-ink/20 px-9 py-5 text-base font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-background"
               >
                 Bekijk ons werk
               </Link>
@@ -88,33 +88,21 @@ export function Hero() {
           transition={{ delay: 1.6, duration: 1 }}
           className="mt-16 pb-10"
         >
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-soft">
-            <span>Websites <strong className="text-ink">vanaf €750</strong></span>
-            <span className="h-1 w-1 rounded-full bg-ink-soft" />
-            <span>Webshops <strong className="text-ink">vanaf €2.500</strong></span>
-            <span className="h-1 w-1 rounded-full bg-ink-soft" />
-            <span>SEO inbegrepen</span>
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 shadow-sm">
+              <span className="text-ink-soft">Websites</span>
+              <strong className="font-semibold text-accent">vanaf €750</strong>
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 shadow-sm">
+              <span className="text-ink-soft">Webshops</span>
+              <strong className="font-semibold text-accent">vanaf €2.500</strong>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-ink-soft shadow-sm">
+              <span className="font-bold text-emerald-600">✓</span> SEO inbegrepen
+            </span>
           </div>
         </motion.div>
       </div>
-
-      {/* scroll cue */}
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.25em] text-ink-soft"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span>scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            className="h-6 w-px bg-ink-soft"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

@@ -17,7 +17,7 @@ export function Marquee({
 }: Props) {
   const doubled = [...items, ...items];
   return (
-    <div className={`marquee-pause group relative overflow-hidden ${className ?? ""}`}>
+    <div style={{ overflowX: "clip" }} className={`marquee-pause group relative ${className ?? ""}`}>
       <div
         className={`flex w-max gap-12 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
         style={{ ["--marquee-duration" as string]: `${duration}s` }}
