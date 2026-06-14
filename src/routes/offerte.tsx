@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, RevealWords } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/Section";
 import { Magnetic } from "@/components/site/Magnetic";
+import { ProgressIndicator } from "@/components/ui/progress-indicator";
 
 export const Route = createFileRoute("/offerte")({
   head: () => ({
@@ -108,11 +109,19 @@ function Offerte() {
     if (step > 0) setStep(step - 1);
   }
 
+  function isValidEmail(v: string) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  const emailError = step === 3 && data.email.length > 0 && !isValidEmail(data.email)
+    ? "Vul een geldig e-mailadres in"
+    : "";
+
   const canNext =
     (step === 0 && !!data.type) ||
     step === 1 ||
     (step === 2 && !!data.timeline) ||
-    (step === 3 && !!data.name && !!data.email);
+    (step === 3 && !!data.name && isValidEmail(data.email));
 
   return (
     <article>
@@ -135,18 +144,11 @@ function Offerte() {
       </section>
 
       <section className="px-6 pb-32 lg:px-10">
-        <div className="mx-auto max-w-[1100px]">
-          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-background">
-            {/* progress */}
-            <div className="h-1 bg-ink/10">
-              <motion.div
-                className="h-full bg-accent"
-                animate={{ width: done ? "100%" : `${progress}%` }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              />
-            </div>
+        <div className="mx-auto max-w-[1100px] space-y-4">
 
-            <div className="p-8 md:p-14">
+          {/* Stap content — alleen dit blok animeert per stap */}
+          <div className="overflow-hidden rounded-3xl border border-ink/10 bg-background">
+            <div className="p-8 md:p-14 min-h-[480px]">
               <AnimatePresence mode="wait">
                 {done ? (
                   <motion.div
@@ -173,10 +175,6 @@ function Offerte() {
                     exit={{ opacity: 0, x: -30 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <div className="mb-6 text-xs uppercase tracking-[0.25em] text-ink-soft">
-                      Stap {step + 1} van {total}
-                    </div>
-
                     {step === 0 && (
                       <div>
                         <h3 className="font-display text-3xl text-ink md:text-4xl">Wat voor project?</h3>
@@ -240,7 +238,7 @@ function Offerte() {
                         <h3 className="font-display text-3xl text-ink md:text-4xl">Waar bereiken we je?</h3>
                         <div className="grid gap-4 md:grid-cols-2">
                           <Field label="Naam *" value={data.name} onChange={(v) => setData({ ...data, name: v })} />
-                          <Field label="E-mail *" type="email" value={data.email} onChange={(v) => setData({ ...data, email: v })} />
+                          <Field label="E-mail *" type="email" value={data.email} onChange={(v) => setData({ ...data, email: v })} error={emailError} />
                           <div className="md:col-span-2">
                             <Field label="Bedrijf (optioneel)" value={data.company} onChange={(v) => setData({ ...data, company: v })} />
                           </div>
@@ -250,31 +248,23 @@ function Offerte() {
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              {!done && (
-                <div className="mt-12 flex items-center justify-between border-t border-ink/10 pt-6">
-                  <button
-                    onClick={prev}
-                    disabled={step === 0}
-                    className="text-sm text-ink-soft transition-colors hover:text-ink disabled:opacity-30"
-                  >
-                    ← Vorige
-                  </button>
-                  <Magnetic strength={15}>
-                    <button
-                      onClick={next}
-                      disabled={!canNext || sending}
-                      className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-background disabled:opacity-30"
-                    >
-                      <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-                      <span className="relative">{sending ? "Versturen…" : step === total - 1 ? "Plan gesprek" : "Volgende"}</span>
-                      <span className="relative">→</span>
-                    </button>
-                  </Magnetic>
-                </div>
-              )}
             </div>
           </div>
+
+          {/* Progress + navigatie — buiten de animerende kaart, altijd vloeiend */}
+          {!done && (
+            <div className="rounded-3xl border border-ink/10 bg-background p-6 md:p-8">
+              <ProgressIndicator
+                step={step + 1}
+                total={total}
+                canNext={canNext}
+                sending={sending}
+                onNext={next}
+                onPrev={prev}
+              />
+            </div>
+          )}
+
         </div>
       </section>
     </article>
@@ -296,7 +286,7 @@ function Chip({ children, active, onClick }: { children: React.ReactNode; active
   );
 }
 
-function Field({ label, value, onChange, type = "text" }: { label: string; value: string; onChange: (v: string) => void; type?: string }) {
+function Field({ label, value, onChange, type = "text", error }: { label: string; value: string; onChange: (v: string) => void; type?: string; error?: string }) {
   return (
     <label className="block">
       <span className="text-xs uppercase tracking-[0.2em] text-ink-soft">{label}</span>
@@ -304,8 +294,9 @@ function Field({ label, value, onChange, type = "text" }: { label: string; value
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 w-full rounded-xl border border-ink/15 bg-surface/30 px-4 py-3 text-ink outline-none focus:border-accent"
+        className={`mt-2 w-full rounded-xl border bg-surface/30 px-4 py-3 text-ink outline-none focus:border-accent ${error ? "border-red-400" : "border-ink/15"}`}
       />
+      {error && <span className="mt-1 block text-xs text-red-500">{error}</span>}
     </label>
   );
 }

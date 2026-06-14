@@ -40,7 +40,7 @@ function Home() {
       <Hero />
 
       {/* Trust marquee */}
-      <section className="border-y border-ink/10 bg-background py-6">
+      <section className="border-y border-ink/10 bg-background py-10">
         <Marquee
           duration={50}
           items={PARTNERS.map((p) => (
