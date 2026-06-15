@@ -43,7 +43,11 @@
 
 :root {
   --radius: 1rem;
-  --app-safe-top: max(3.75rem, env(safe-area-inset-top, 0px));
+  /* Hoogte van de zone achter het Dynamic Island/de statusbalk die de header
+     moet afdekken. env() geeft op sommige toestellen 0 terug, daarom een vaste
+     ondergrens van 4rem; op toestellen waar env() wél werkt pakt het de echte
+     inset. Op desktop (md+) is er geen island, dus daar een kleine waarde. */
+  --app-safe-top: max(0.75rem, env(safe-area-inset-top, 0px));
 
   /* Warm editorial palette */
   --background: oklch(0.972 0.022 80);       /* #FBF6EC cream */
@@ -116,6 +120,14 @@
   --ring: oklch(0.7 0.22 35);
 }
 
+/* Desktop heeft geen Dynamic Island: kleine header-padding.
+   Staat buiten @layer base zodat het de unlayered :root waarde overschrijft. */
+@media (min-width: 768px) {
+  :root {
+    --app-safe-top: 0.75rem;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -132,9 +144,6 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
-    /* Vangnet: voorkomt dat losse elementen (titels, tijdlijn, header) een
-       paar px buiten beeld vallen en horizontaal laten scrollen op mobiel.
-       'clip' i.p.v. 'hidden' zodat letter-descenders niet worden afgesneden. */
     overflow-x: clip;
   }
 

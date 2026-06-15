@@ -16,6 +16,7 @@ import { Footer } from "@/components/site/Footer";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { Cursor } from "@/components/site/Cursor";
+import { SafeAreaFill } from "@/components/site/SafeAreaFill";
 
 function NotFoundComponent() {
   return (
@@ -77,9 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      // viewport-meta staat statisch in RootShell <head> (zie onder) zodat
-      // Safari viewport-fit=cover bij de eerste parse vastlegt en niet tijdens
-      // hydratie verstoord raakt. Hier dus NIET nogmaals opnemen.
+      // viewport-meta staat statisch in RootShell <head> (zie onder), exact zoals
+      // op de werkende kale testpagina, zodat Safari viewport-fit=cover bij de
+      // eerste parse vastlegt. Hier dus NIET nogmaals opnemen.
+      { name: "theme-color", content: "#fbf6ec" },
       { title: "Studio Velora — Digitaal design & development studio" },
       {
         name: "description",
@@ -121,8 +123,8 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="nl">
       <head>
-        {/* Statisch & als eerste — Safari legt viewport-fit=cover bij de eerste
-            parse vast (nodig om áchter het Dynamic Island te kunnen tekenen). */}
+        {/* Statisch & als eerste, exact zoals de werkende kale testpagina:
+            Safari legt viewport-fit=cover bij de eerste parse vast. */}
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <HeadContent />
       </head>
@@ -142,6 +144,7 @@ function RootComponent() {
       <SmoothScroll />
       <ScrollProgress />
       <Cursor />
+      <SafeAreaFill />
       <Header />
       <main className="relative">
         <Outlet />
