@@ -88,16 +88,16 @@ export function Hero() {
           transition={{ delay: 1.6, duration: 1 }}
           className="mt-16 pb-10"
         >
-          <div className="flex flex-wrap items-center gap-4 text-lg">
-            <span className="inline-flex items-center gap-3 rounded-full border border-ink/10 bg-surface/70 px-7 py-3.5 shadow-sm">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm shadow-sm">
               <span className="text-ink-soft">Websites</span>
               <strong className="font-semibold text-accent">vanaf €750</strong>
             </span>
-            <span className="inline-flex items-center gap-3 rounded-full border border-ink/10 bg-surface/70 px-7 py-3.5 shadow-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm shadow-sm">
               <span className="text-ink-soft">Webshops</span>
               <strong className="font-semibold text-accent">vanaf €2.500</strong>
             </span>
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-ink/10 bg-surface/70 px-7 py-3.5 text-ink-soft shadow-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm text-ink-soft shadow-sm">
               <span className="font-bold text-emerald-600">✓</span> SEO inbegrepen
             </span>
           </div>
