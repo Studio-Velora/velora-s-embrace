@@ -10,6 +10,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Project gebruikt bun (bun.lock); npm-lockfile is een stray artefact
+package-lock.json
 .output
 .vinxi
 .tanstack/**
