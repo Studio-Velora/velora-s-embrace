@@ -14,6 +14,7 @@ export const Route = createFileRoute("/seo")({
       { property: "og:title", content: "SEO — Studio Velora" },
       { property: "og:description", content: "Een stevige SEO-basis bij elke website, met opties voor doorgroeien." },
     ],
+    links: [{ rel: "canonical", href: "https://studiovelora.nl/seo" }],
   }),
   component: SeoPage,
 });

@@ -31,7 +31,14 @@ export function Header() {
           ))}
         </nav>
 
-        <Magnetic strength={15} className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href="tel:+31611277632"
+            className="text-sm text-ink-soft hover:text-accent transition-colors"
+          >
+            +31 6 11 27 76 32
+          </a>
+        <Magnetic strength={15}>
           <Link
             to="/offerte"
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-background"
@@ -43,6 +50,7 @@ export function Header() {
             </span>
           </Link>
         </Magnetic>
+        </div>
       </div>
     </header>
   );

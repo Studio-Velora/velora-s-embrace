@@ -15,6 +15,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact — Studio Velora" },
       { property: "og:description", content: "Bereik Studio Velora via telefoon, WhatsApp of e-mail." },
     ],
+    links: [{ rel: "canonical", href: "https://studiovelora.nl/contact" }],
   }),
   component: Contact,
 });

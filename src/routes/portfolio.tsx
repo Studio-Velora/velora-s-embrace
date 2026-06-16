@@ -14,6 +14,7 @@ export const Route = createFileRoute("/portfolio")({
       { property: "og:title", content: "Werk — Studio Velora" },
       { property: "og:description", content: "Cases en case studies van Studio Velora." },
     ],
+    links: [{ rel: "canonical", href: "https://studiovelora.nl/portfolio" }],
   }),
   component: Portfolio,
 });

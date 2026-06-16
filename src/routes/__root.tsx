@@ -102,15 +102,48 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
       { name: "twitter:description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4a4220ae-413f-4dc8-b7a6-ef86ba57ac9e/id-preview-2700496c--a4b518c4-718f-445e-b842-1a86bc0abe27.lovable.app-1781131761725.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4a4220ae-413f-4dc8-b7a6-ef86ba57ac9e/id-preview-2700496c--a4b518c4-718f-445e-b842-1a86bc0abe27.lovable.app-1781131761725.png" },
+      { property: "og:image", content: "https://studiovelora.nl/og-image.png" },
+      { name: "twitter:image", content: "https://studiovelora.nl/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "canonical", href: "https://studiovelora.nl/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Studio Velora",
+          "description": "Studio Velora bouwt snelle websites, webshops en merken voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
+          "url": "https://studiovelora.nl",
+          "telephone": "+31611277632",
+          "email": "info@studiovelora.nl",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Den Haag",
+            "addressCountry": "NL"
+          },
+          "areaServed": "NL",
+          "priceRange": "€€",
+          "openingHours": "Mo-Su 09:00-20:00",
+          "sameAs": []
+        }),
+      },
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",
+        async: true,
+      },
+      {
+        children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());var consent=localStorage.getItem('sv_cookie_consent');if(consent==='all'){gtag('config','G-XXXXXXXXXX');}`,
       },
     ],
   }),

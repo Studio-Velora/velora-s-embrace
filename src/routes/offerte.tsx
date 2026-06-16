@@ -17,6 +17,7 @@ export const Route = createFileRoute("/offerte")({
       { property: "og:title", content: "Offerte aanvragen — Studio Velora" },
       { property: "og:description", content: "In 3 stappen een vrijblijvende offerte op maat." },
     ],
+    links: [{ rel: "canonical", href: "https://studiovelora.nl/offerte" }],
   }),
   component: Offerte,
 });

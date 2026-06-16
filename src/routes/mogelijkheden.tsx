@@ -66,6 +66,7 @@ export const Route = createFileRoute("/mogelijkheden")({
       { property: "og:title", content: "Mogelijkheden — Studio Velora" },
       { property: "og:description", content: "Een overzicht van features die we toevoegen aan websites en webshops." },
     ],
+    links: [{ rel: "canonical", href: "https://studiovelora.nl/mogelijkheden" }],
   }),
   component: Mogelijkheden,
 });
