@@ -17,6 +17,7 @@ import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { Cursor } from "@/components/site/Cursor";
 import { SafeAreaFill } from "@/components/site/SafeAreaFill";
+import { CookieBanner } from "@/components/site/CookieBanner";
 
 function NotFoundComponent() {
   return (
@@ -150,6 +151,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <CookieBanner />
     </QueryClientProvider>
   );
 }
