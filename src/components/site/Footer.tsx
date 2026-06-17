@@ -73,8 +73,10 @@ export function Footer() {
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-background/10 pt-6 text-xs text-background/50">
           <div>© {new Date().getFullYear()} Studio Velora — Alle rechten voorbehouden.</div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <a href="/privacybeleid" className="hover:text-background/80 transition-colors">Privacybeleid</a>
+            <span>·</span>
+            <a href="/algemene-voorwaarden" className="hover:text-background/80 transition-colors">Algemene Voorwaarden</a>
             <span>·</span>
             <span>Met zorg gebouwd in Nederland.</span>
           </div>

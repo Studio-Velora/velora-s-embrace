@@ -40,7 +40,7 @@ const TIMELINES = ["Zo snel mogelijk", "Binnen 1 maand", "1–3 maanden", "Verke
 
 // ⚠️ PLAK HIER JE GRATIS WEB3FORMS ACCESS KEY (via https://web3forms.com — e-mail: shakir.studiovelora@gmail.com)
 // Zolang dit niet is ingevuld, werkt het formulier wel maar wordt er geen mail verstuurd.
-const WEB3FORMS_KEY = "PLAK-HIER-JE-WEB3FORMS-ACCESS-KEY";
+const WEB3FORMS_KEY = "d225a492-154d-4a96-8be2-eaa01d552447";
 
 function Offerte() {
   const [step, setStep] = useState(0);

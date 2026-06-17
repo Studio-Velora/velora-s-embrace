@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf6ec"/>
+      <stop offset="100%" stop-color="#f0e8d8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.15" r="0.6">
+      <stop offset="0%" stop-color="#b5613a" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#b5613a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.03 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" filter="url(#grain)"/>
+
+  <!-- Logo dot -->
+  <g transform="translate(80, 80)">
+    <circle cx="14" cy="14" r="14" fill="#b5613a"/>
+    <circle cx="14" cy="14" r="22" fill="#b5613a" opacity="0.2"/>
+  </g>
+
+  <!-- Brand text -->
+  <text x="130" y="105" font-family="'Fraunces', 'Times New Roman', serif" font-size="40" font-weight="500" fill="#1a1a1a" letter-spacing="-1">velora</text>
+
+  <!-- Eyebrow label -->
+  <text x="80" y="280" font-family="'Inter Tight', sans-serif" font-size="20" font-weight="500" fill="#b5613a" letter-spacing="4">DIGITAAL DESIGN &amp; DEVELOPMENT</text>
+
+  <!-- Main heading -->
+  <text x="80" y="380" font-family="'Fraunces', 'Times New Roman', serif" font-size="100" font-weight="500" fill="#1a1a1a" letter-spacing="-3">Websites die</text>
+  <text x="80" y="490" font-family="'Fraunces', 'Times New Roman', serif" font-size="100" font-weight="500" fill="#1a1a1a" letter-spacing="-3" font-style="italic">verkopen.</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="560" font-family="'Inter Tight', sans-serif" font-size="24" fill="#1a1a1a" opacity="0.7">Vaste prijzen · SEO inbegrepen · In 14 dagen live</text>
+
+  <!-- Decorative circle right -->
+  <circle cx="1080" cy="200" r="160" fill="none" stroke="#b5613a" stroke-width="2" opacity="0.3"/>
+  <circle cx="1080" cy="200" r="100" fill="#b5613a" opacity="0.08"/>
+  <circle cx="1080" cy="200" r="40" fill="#b5613a"/>
+</svg>

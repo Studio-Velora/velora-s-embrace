@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Magnetic } from "./Magnetic";
+import { ReferralBanner } from "./ReferralBanner";
 import { NAV } from "@/lib/site-content";
 
 export function Header() {
@@ -8,6 +9,7 @@ export function Header() {
       className="fixed inset-x-0 top-0 z-50 bg-background transition-all duration-500 pb-3"
       style={{ paddingTop: "var(--app-safe-top)" }}
     >
+      <ReferralBanner />
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 lg:px-12">
         <Link to="/" className="group flex items-center gap-2" aria-label="Velora home">
           <span className="relative inline-block h-3.5 w-3.5 rounded-full bg-accent">
