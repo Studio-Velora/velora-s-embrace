@@ -1,5 +1,5 @@
 export const NAV = [
-  { label: "Werk", to: "/portfolio" },
+  { label: "Portfolio", to: "/portfolio" },
   { label: "Mogelijkheden", to: "/mogelijkheden" },
   { label: "SEO", to: "/seo" },
   { label: "Contact", to: "/contact" },
@@ -9,7 +9,7 @@ export const SERVICES = [
   {
     number: "01",
     title: "Zakelijke website",
-    price: "€750",
+    price: "€500",
     blurb:
       "Een strakke, snelle website die je bedrijf sterk presenteert. Mobiel-vriendelijk en gevonden op Google.",
     bullets: [
@@ -23,6 +23,22 @@ export const SERVICES = [
   },
   {
     number: "02",
+    title: "Premium website",
+    price: "€950",
+    blurb:
+      "Alles van de zakelijke website, plus premium functies naar keuze: van afspraakmodules en AI chatbots tot klantportalen.",
+    bullets: [
+      "Alles uit de zakelijke website",
+      "Premium functies naar keuze",
+      "Geavanceerde animaties & interactie",
+      "Koppelingen met externe systemen",
+      "Bekijk alle mogelijkheden →",
+      "2 revisierondes + 30 dagen support",
+    ],
+    link: { label: "Bekijk de mogelijkheden", to: "/mogelijkheden" },
+  },
+  {
+    number: "03",
     title: "Webshop",
     price: "€2.500",
     blurb:
@@ -37,7 +53,7 @@ export const SERVICES = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     title: "Onderhoud & beheer",
     price: "€30/mnd of €50/uur",
     blurb:

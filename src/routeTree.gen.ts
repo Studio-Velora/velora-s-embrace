@@ -10,15 +10,28 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SeoRouteImport } from './routes/seo'
+import { Route as ReferralVoorwaardenRouteImport } from './routes/referral-voorwaarden'
+import { Route as PrivacybeleidRouteImport } from './routes/privacybeleid'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as OfferteRouteImport } from './routes/offerte'
 import { Route as MogelijkhedenRouteImport } from './routes/mogelijkheden'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AlgemeneVoorwaardenRouteImport } from './routes/algemene-voorwaarden'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SeoRoute = SeoRouteImport.update({
   id: '/seo',
   path: '/seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferralVoorwaardenRoute = ReferralVoorwaardenRouteImport.update({
+  id: '/referral-voorwaarden',
+  path: '/referral-voorwaarden',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacybeleidRoute = PrivacybeleidRouteImport.update({
+  id: '/privacybeleid',
+  path: '/privacybeleid',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -41,6 +54,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlgemeneVoorwaardenRoute = AlgemeneVoorwaardenRouteImport.update({
+  id: '/algemene-voorwaarden',
+  path: '/algemene-voorwaarden',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,56 +67,83 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/contact': typeof ContactRoute
   '/mogelijkheden': typeof MogelijkhedenRoute
   '/offerte': typeof OfferteRoute
   '/portfolio': typeof PortfolioRoute
+  '/privacybeleid': typeof PrivacybeleidRoute
+  '/referral-voorwaarden': typeof ReferralVoorwaardenRoute
   '/seo': typeof SeoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/contact': typeof ContactRoute
   '/mogelijkheden': typeof MogelijkhedenRoute
   '/offerte': typeof OfferteRoute
   '/portfolio': typeof PortfolioRoute
+  '/privacybeleid': typeof PrivacybeleidRoute
+  '/referral-voorwaarden': typeof ReferralVoorwaardenRoute
   '/seo': typeof SeoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/algemene-voorwaarden': typeof AlgemeneVoorwaardenRoute
   '/contact': typeof ContactRoute
   '/mogelijkheden': typeof MogelijkhedenRoute
   '/offerte': typeof OfferteRoute
   '/portfolio': typeof PortfolioRoute
+  '/privacybeleid': typeof PrivacybeleidRoute
+  '/referral-voorwaarden': typeof ReferralVoorwaardenRoute
   '/seo': typeof SeoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/algemene-voorwaarden'
     | '/contact'
     | '/mogelijkheden'
     | '/offerte'
     | '/portfolio'
+    | '/privacybeleid'
+    | '/referral-voorwaarden'
     | '/seo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/mogelijkheden' | '/offerte' | '/portfolio' | '/seo'
+  to:
+    | '/'
+    | '/algemene-voorwaarden'
+    | '/contact'
+    | '/mogelijkheden'
+    | '/offerte'
+    | '/portfolio'
+    | '/privacybeleid'
+    | '/referral-voorwaarden'
+    | '/seo'
   id:
     | '__root__'
     | '/'
+    | '/algemene-voorwaarden'
     | '/contact'
     | '/mogelijkheden'
     | '/offerte'
     | '/portfolio'
+    | '/privacybeleid'
+    | '/referral-voorwaarden'
     | '/seo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlgemeneVoorwaardenRoute: typeof AlgemeneVoorwaardenRoute
   ContactRoute: typeof ContactRoute
   MogelijkhedenRoute: typeof MogelijkhedenRoute
   OfferteRoute: typeof OfferteRoute
   PortfolioRoute: typeof PortfolioRoute
+  PrivacybeleidRoute: typeof PrivacybeleidRoute
+  ReferralVoorwaardenRoute: typeof ReferralVoorwaardenRoute
   SeoRoute: typeof SeoRoute
 }
 
@@ -109,6 +154,20 @@ declare module '@tanstack/react-router' {
       path: '/seo'
       fullPath: '/seo'
       preLoaderRoute: typeof SeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referral-voorwaarden': {
+      id: '/referral-voorwaarden'
+      path: '/referral-voorwaarden'
+      fullPath: '/referral-voorwaarden'
+      preLoaderRoute: typeof ReferralVoorwaardenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacybeleid': {
+      id: '/privacybeleid'
+      path: '/privacybeleid'
+      fullPath: '/privacybeleid'
+      preLoaderRoute: typeof PrivacybeleidRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -139,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/algemene-voorwaarden': {
+      id: '/algemene-voorwaarden'
+      path: '/algemene-voorwaarden'
+      fullPath: '/algemene-voorwaarden'
+      preLoaderRoute: typeof AlgemeneVoorwaardenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -151,10 +217,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlgemeneVoorwaardenRoute: AlgemeneVoorwaardenRoute,
   ContactRoute: ContactRoute,
   MogelijkhedenRoute: MogelijkhedenRoute,
   OfferteRoute: OfferteRoute,
   PortfolioRoute: PortfolioRoute,
+  PrivacybeleidRoute: PrivacybeleidRoute,
+  ReferralVoorwaardenRoute: ReferralVoorwaardenRoute,
   SeoRoute: SeoRoute,
 }
 export const routeTree = rootRouteImport

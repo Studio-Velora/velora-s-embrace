@@ -32,7 +32,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            Studio · Beschikbaar voor nieuwe projecten
+            Welkom bij Studio Velora
           </motion.div>
 
           <h1 className="mt-8 font-display text-[14vw] leading-[1.04] tracking-tight text-ink md:text-[8.5vw] lg:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">

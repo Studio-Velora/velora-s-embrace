@@ -58,6 +58,24 @@ const MOGELIJKHEDEN: Mog[] = [
 const CATS: Cat[] = ["Alle", "Klantcontact", "Verkoop & betalen", "Automatisering", "Beheer & content"];
 const IC_COLORS = ["bg-accent", "bg-ink", "bg-accent", "bg-ink"];
 
+/* Welke functies zitten standaard in de Zakelijke website (basis),
+   en welke vereisen het Premium-pakket. */
+const PREMIUM_TITLES = new Set<string>([
+  "Afspraakmodule",
+  "Online reserveringen",
+  "Live chat",
+  "AI chatbot",
+  "Webshop",
+  "iDEAL & online betalen",
+  "Factuurmodule",
+  "API koppelingen",
+  "CMS — zelf aanpassen",
+  "Klantportaal",
+  "Loginomgeving",
+  "Admin dashboard",
+]);
+const isPremium = (title: string) => PREMIUM_TITLES.has(title);
+
 export const Route = createFileRoute("/mogelijkheden")({
   head: () => ({
     meta: [
@@ -98,6 +116,22 @@ function Mogelijkheden() {
               Mis je iets? We bouwen het op maat.
             </p>
           </Reveal>
+          <Reveal delay={0.4}>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-ink-soft">
+              <span className="inline-flex items-center gap-2">
+                <span className="rounded-full bg-ink/8 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                  Inbegrepen
+                </span>
+                zit in de <strong className="font-semibold text-ink">Zakelijke website</strong>
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="rounded-full bg-accent/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-accent">
+                  Premium
+                </span>
+                vereist het <strong className="font-semibold text-ink">Premium-pakket</strong>
+              </span>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -137,8 +171,19 @@ function Mogelijkheden() {
           {filtered.map((m, i) => (
             <Reveal key={m.title} delay={(i % 3) * 0.05}>
               <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-xl text-background [&_svg]:h-6 [&_svg]:w-6 ${IC_COLORS[i % IC_COLORS.length]}`}>
-                  {m.icon}
+                <div className="flex items-start justify-between gap-3">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl text-background [&_svg]:h-6 [&_svg]:w-6 ${IC_COLORS[i % IC_COLORS.length]}`}>
+                    {m.icon}
+                  </div>
+                  {isPremium(m.title) ? (
+                    <span className="rounded-full bg-accent/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-accent">
+                      Premium
+                    </span>
+                  ) : (
+                    <span className="rounded-full bg-ink/8 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                      Inbegrepen
+                    </span>
+                  )}
                 </div>
                 <div className="mt-4 text-xs uppercase tracking-[0.18em] text-accent">{m.cat}</div>
                 <h3 className="mt-1 font-display text-2xl text-ink">{m.title}</h3>

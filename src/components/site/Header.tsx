@@ -10,7 +10,7 @@ export function Header() {
       style={{ paddingTop: "var(--app-safe-top)" }}
     >
       <ReferralBanner />
-      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 lg:px-12">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 pt-4 lg:px-12">
         <Link to="/" className="group flex items-center gap-2" aria-label="Velora home">
           <span className="relative inline-block h-3.5 w-3.5 rounded-full bg-accent">
             <span className="absolute inset-0 animate-ping rounded-full bg-accent opacity-40" />
