@@ -73,8 +73,8 @@ function Home() {
               <Reveal>
                 <p className="text-lg text-ink-soft md:text-xl">
                   Studio Velora is een digitaal design & development studio. Geen
-                  grote agency met hoge overhead, maar directe samenwerking met de
-                  persoon die jouw website bouwt.
+                  groot bedrijf met dure tussenpersonen, maar rechtstreeks contact
+                  met degene die jouw website bouwt.
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
@@ -129,8 +129,12 @@ function Home() {
               Een greep uit wat we bouwen.
             </p>
           </div>
+        </div>
+        <div className="my-12 md:my-16">
           <BentoFeatures />
-          <Reveal className="mt-12 flex flex-wrap items-center gap-4">
+        </div>
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+          <Reveal className="flex flex-wrap items-center gap-4">
             <Link
               to="/mogelijkheden"
               className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm text-background"

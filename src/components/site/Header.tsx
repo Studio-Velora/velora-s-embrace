@@ -1,9 +1,14 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import { Magnetic } from "./Magnetic";
 import { ReferralBanner } from "./ReferralBanner";
 import { NAV } from "@/lib/site-content";
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header
       className="fixed inset-x-0 top-0 z-50 bg-background transition-all duration-500 pb-3"
@@ -53,7 +58,57 @@ export function Header() {
           </Link>
         </Magnetic>
         </div>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Sluit menu" : "Open menu"}
+          aria-expanded={open}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink md:hidden"
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-ink/10 md:hidden"
+          >
+            <nav className="flex flex-col gap-1 px-6 py-6">
+              {NAV.map((n) => (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  className="rounded-xl px-3 py-3 font-display text-2xl text-ink"
+                  activeProps={{ className: "text-accent" }}
+                >
+                  {n.label}
+                </Link>
+              ))}
+              <a
+                href="tel:+31611277632"
+                onClick={() => setOpen(false)}
+                className="mt-2 px-3 py-2 text-sm text-ink-soft"
+              >
+                +31 6 11 27 76 32
+              </a>
+              <Link
+                to="/offerte"
+                onClick={() => setOpen(false)}
+                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-4 text-base font-semibold text-background"
+              >
+                Plan een gesprek &rarr;
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

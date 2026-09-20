@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // viewport-meta staat statisch in RootShell <head> (zie onder), exact zoals
       // op de werkende kale testpagina, zodat Safari viewport-fit=cover bij de
       // eerste parse vastlegt. Hier dus NIET nogmaals opnemen.
-      { name: "theme-color", content: "#fbf6ec" },
+      { name: "theme-color", content: "#fbfaf7" },
       { title: "Studio Velora — Digitaal design & development studio" },
       {
         name: "description",

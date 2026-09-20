@@ -16,6 +16,14 @@ export function ServiceStack() {
             </Reveal>
           ))}
         </div>
+        <Reveal delay={0.3}>
+          <Link
+            to="/pakketten"
+            className="mt-10 inline-flex items-center gap-2 text-base font-semibold text-accent hover:underline"
+          >
+            Bekijk alle pakketten &amp; prijzen &rarr;
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ import { Route as SeoRouteImport } from './routes/seo'
 import { Route as ReferralVoorwaardenRouteImport } from './routes/referral-voorwaarden'
 import { Route as PrivacybeleidRouteImport } from './routes/privacybeleid'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PakkettenRouteImport } from './routes/pakketten'
 import { Route as OfferteRouteImport } from './routes/offerte'
 import { Route as MogelijkhedenRouteImport } from './routes/mogelijkheden'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -37,6 +38,11 @@ const PrivacybeleidRoute = PrivacybeleidRouteImport.update({
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakkettenRoute = PakkettenRouteImport.update({
+  id: '/pakketten',
+  path: '/pakketten',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OfferteRoute = OfferteRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/mogelijkheden': typeof MogelijkhedenRoute
   '/offerte': typeof OfferteRoute
+  '/pakketten': typeof PakkettenRoute
   '/portfolio': typeof PortfolioRoute
   '/privacybeleid': typeof PrivacybeleidRoute
   '/referral-voorwaarden': typeof ReferralVoorwaardenRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/mogelijkheden': typeof MogelijkhedenRoute
   '/offerte': typeof OfferteRoute
+  '/pakketten': typeof PakkettenRoute
   '/portfolio': typeof PortfolioRoute
   '/privacybeleid': typeof PrivacybeleidRoute
   '/referral-voorwaarden': typeof ReferralVoorwaardenRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/mogelijkheden': typeof MogelijkhedenRoute
   '/offerte': typeof OfferteRoute
+  '/pakketten': typeof PakkettenRoute
   '/portfolio': typeof PortfolioRoute
   '/privacybeleid': typeof PrivacybeleidRoute
   '/referral-voorwaarden': typeof ReferralVoorwaardenRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/mogelijkheden'
     | '/offerte'
+    | '/pakketten'
     | '/portfolio'
     | '/privacybeleid'
     | '/referral-voorwaarden'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/mogelijkheden'
     | '/offerte'
+    | '/pakketten'
     | '/portfolio'
     | '/privacybeleid'
     | '/referral-voorwaarden'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/mogelijkheden'
     | '/offerte'
+    | '/pakketten'
     | '/portfolio'
     | '/privacybeleid'
     | '/referral-voorwaarden'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   MogelijkhedenRoute: typeof MogelijkhedenRoute
   OfferteRoute: typeof OfferteRoute
+  PakkettenRoute: typeof PakkettenRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacybeleidRoute: typeof PrivacybeleidRoute
   ReferralVoorwaardenRoute: typeof ReferralVoorwaardenRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/portfolio'
       fullPath: '/portfolio'
       preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakketten': {
+      id: '/pakketten'
+      path: '/pakketten'
+      fullPath: '/pakketten'
+      preLoaderRoute: typeof PakkettenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/offerte': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   MogelijkhedenRoute: MogelijkhedenRoute,
   OfferteRoute: OfferteRoute,
+  PakkettenRoute: PakkettenRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacybeleidRoute: PrivacybeleidRoute,
   ReferralVoorwaardenRoute: ReferralVoorwaardenRoute,

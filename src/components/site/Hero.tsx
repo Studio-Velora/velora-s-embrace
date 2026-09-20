@@ -80,6 +80,18 @@ export function Hero() {
               </Link>
             </Magnetic>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.45, duration: 0.8 }}
+            className="mt-6 flex items-center gap-2 text-sm text-ink-soft"
+          >
+            <span className="text-accent tracking-tight">★★★★★</span>
+            <span>
+              <strong className="font-semibold text-ink">5.0</strong> op basis van klantbeoordelingen
+            </span>
+          </motion.div>
         </div>
 
         <motion.div
@@ -91,11 +103,11 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm shadow-sm">
               <span className="text-ink-soft">Websites</span>
-              <strong className="font-semibold text-accent">vanaf €750</strong>
+              <strong className="font-semibold text-accent">vanaf €450</strong>
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm shadow-sm">
               <span className="text-ink-soft">Webshops</span>
-              <strong className="font-semibold text-accent">vanaf €2.500</strong>
+              <strong className="font-semibold text-accent">vanaf €1.450</strong>
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm text-ink-soft shadow-sm">
               <span className="font-bold text-emerald-600">✓</span> SEO inbegrepen
