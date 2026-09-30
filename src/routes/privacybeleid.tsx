@@ -4,11 +4,11 @@ import { Reveal } from "@/components/site/Reveal";
 export const Route = createFileRoute("/privacybeleid")({
   head: () => ({
     meta: [
-      { title: "Privacybeleid — Studio Velora" },
-      { name: "description", content: "Lees hoe Studio Velora omgaat met uw persoonsgegevens." },
+      { title: "Privacybeleid — Novela Webdesign" },
+      { name: "description", content: "Lees hoe Novela Webdesign omgaat met uw persoonsgegevens." },
       { name: "robots", content: "noindex" },
     ],
-    links: [{ rel: "canonical", href: "https://studiovelora.nl/privacybeleid" }],
+    links: [{ rel: "canonical", href: "https://www.novelawebdesign.nl/privacybeleid" }],
   }),
   component: Privacybeleid,
 });
@@ -25,8 +25,8 @@ function Privacybeleid() {
         <div className="mt-12 space-y-10 text-ink-soft leading-relaxed">
           <Reveal>
             <h2 className="font-display text-2xl text-ink mb-3">1. Wie zijn wij?</h2>
-            <p>Studio Velora is een digitaal design- en development studio gevestigd in Den Haag, Nederland. Wij bouwen websites, webshops en digitale producten voor ondernemers.</p>
-            <p className="mt-2">Contactgegevens: <a href="mailto:info@studiovelora.nl" className="text-accent underline underline-offset-2">info@studiovelora.nl</a> · +31 6 11 27 76 32</p>
+            <p>Novela Webdesign is een digitaal design- en development studio gevestigd in Den Haag, Nederland. Wij bouwen websites, webshops en digitale producten voor ondernemers.</p>
+            <p className="mt-2">Contactgegevens: <a href="mailto:info@novelawebdesign.nl" className="text-accent underline underline-offset-2">info@novelawebdesign.nl</a> · +31 6 11 27 76 32</p>
           </Reveal>
 
           <Reveal>
@@ -63,7 +63,7 @@ function Privacybeleid() {
 
           <Reveal>
             <h2 className="font-display text-2xl text-ink mb-3">6. Uw rechten</h2>
-            <p>U heeft het recht op inzage, correctie of verwijdering van uw persoonsgegevens. Stuur hiervoor een e-mail naar <a href="mailto:info@studiovelora.nl" className="text-accent underline underline-offset-2">info@studiovelora.nl</a>. Wij reageren binnen 30 dagen.</p>
+            <p>U heeft het recht op inzage, correctie of verwijdering van uw persoonsgegevens. Stuur hiervoor een e-mail naar <a href="mailto:info@novelawebdesign.nl" className="text-accent underline underline-offset-2">info@novelawebdesign.nl</a>. Wij reageren binnen 30 dagen.</p>
           </Reveal>
 
           <Reveal>
@@ -73,7 +73,7 @@ function Privacybeleid() {
 
           <Reveal>
             <h2 className="font-display text-2xl text-ink mb-3">8. Contact</h2>
-            <p>Heeft u vragen over dit privacybeleid? Neem contact op via <a href="mailto:info@studiovelora.nl" className="text-accent underline underline-offset-2">info@studiovelora.nl</a>.</p>
+            <p>Heeft u vragen over dit privacybeleid? Neem contact op via <a href="mailto:info@novelawebdesign.nl" className="text-accent underline underline-offset-2">info@novelawebdesign.nl</a>.</p>
           </Reveal>
         </div>
       </div>

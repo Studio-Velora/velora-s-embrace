@@ -7,15 +7,15 @@ import { CONTACT } from "@/lib/site-content";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Studio Velora" },
+      { title: "Contact — Novela Webdesign" },
       {
         name: "description",
-        content: "Bel, mail of WhatsApp ons. We denken vrijblijvend met je mee — zonder verkooppraatjes.",
+        content: "Bel, mail of WhatsApp ons. Wij denken vrijblijvend met je mee — zonder verkooppraatjes.",
       },
-      { property: "og:title", content: "Contact — Studio Velora" },
-      { property: "og:description", content: "Bereik Studio Velora via telefoon, WhatsApp of e-mail." },
+      { property: "og:title", content: "Contact — Novela Webdesign" },
+      { property: "og:description", content: "Bereik Novela Webdesign via telefoon, WhatsApp of e-mail." },
     ],
-    links: [{ rel: "canonical", href: "https://studiovelora.nl/contact" }],
+    links: [{ rel: "canonical", href: "https://www.novelawebdesign.nl/contact" }],
   }),
   component: Contact,
 });
@@ -35,7 +35,7 @@ function Contact() {
           </h1>
           <Reveal delay={0.3}>
             <p className="mt-8 max-w-xl text-lg text-ink-soft">
-              Geen idee wat het beste past? Bel of WhatsApp ons gerust. We denken
+              Geen idee wat het beste past? Bel of WhatsApp ons gerust. Wij denken
               vrijblijvend met je mee — zonder verkooppraatjes.
             </p>
           </Reveal>

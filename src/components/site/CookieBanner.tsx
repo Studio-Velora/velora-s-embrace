@@ -25,7 +25,7 @@ export function CookieBanner() {
     <div className="fixed bottom-6 left-1/2 z-[999] w-[calc(100%-3rem)] max-w-xl -translate-x-1/2 rounded-2xl border border-ink/10 bg-surface shadow-2xl shadow-ink/10 p-5 md:p-6">
       <p className="text-sm text-ink-soft leading-relaxed">
         <span className="block font-display text-base text-ink mb-1">Cookies</span>
-        We gebruiken functionele cookies en — met uw toestemming — verbetercookies.{" "}
+        Wij gebruiken functionele cookies en — met uw toestemming — verbetercookies.{" "}
         <a href="/privacybeleid" className="underline underline-offset-2 hover:text-accent transition-colors">
           Privacyverklaring
         </a>

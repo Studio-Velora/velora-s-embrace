@@ -32,14 +32,14 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            Welkom bij Studio Velora
+            Welkom bij Novela Webdesign
           </motion.div>
 
           <h1 className="mt-8 font-display text-[14vw] leading-[1.04] tracking-tight text-ink md:text-[8.5vw] lg:text-[8rem] xl:text-[9rem] 2xl:text-[10rem]">
-            <RevealWords text="Digitaal design" />{" "}
+            <RevealWords text="Digitaal" />{" "}
             <br />
             <span className="italic">
-              <RevealWords text="& development" wordClassName="text-accent" />
+              <RevealWords text="webdesign" wordClassName="text-accent" />
             </span>{" "}
             <br />
             <RevealWords text="studio." />
@@ -51,7 +51,7 @@ export function Hero() {
             transition={{ delay: 1.1, duration: 0.8 }}
             className="mt-8 max-w-2xl text-lg text-ink-soft xl:text-xl"
           >
-            We helpen ondernemers en bedrijven schaalbare digitale producten bouwen —
+            Wij helpen ondernemers en bedrijven schaalbare digitale producten bouwen —
             met doordacht design en zorgvuldige ontwikkeling.
           </motion.p>
 
@@ -63,11 +63,11 @@ export function Hero() {
           >
             <Magnetic strength={20}>
               <Link
-                to="/offerte"
+                to="/pakketten"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-9 py-5 text-base font-semibold text-background"
               >
                 <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-                <span className="relative">Plan een gesprek</span>
+                <span className="relative">Bekijk pakketten en prijzen</span>
                 <span className="relative transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
             </Magnetic>
@@ -80,6 +80,18 @@ export function Hero() {
               </Link>
             </Magnetic>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.45, duration: 0.8 }}
+            className="mt-6 flex items-center gap-2 text-sm text-ink-soft"
+          >
+            <span className="text-accent tracking-tight">★★★★★</span>
+            <span>
+              <strong className="font-semibold text-ink">5.0</strong> op basis van klantbeoordelingen
+            </span>
+          </motion.div>
         </div>
 
         <motion.div
@@ -91,11 +103,11 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm shadow-sm">
               <span className="text-ink-soft">Websites</span>
-              <strong className="font-semibold text-accent">vanaf €750</strong>
+              <strong className="font-semibold text-accent">vanaf €450</strong>
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm shadow-sm">
               <span className="text-ink-soft">Webshops</span>
-              <strong className="font-semibold text-accent">vanaf €2.500</strong>
+              <strong className="font-semibold text-accent">vanaf €1.450</strong>
             </span>
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-surface/70 px-4 py-2 text-sm text-ink-soft shadow-sm">
               <span className="font-bold text-emerald-600">✓</span> SEO inbegrepen

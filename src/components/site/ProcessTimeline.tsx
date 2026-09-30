@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { PROCESS } from "@/lib/site-content";
+import { ProcessVisual } from "./ProcessVisual";
 
 export function ProcessTimeline() {
   const ref = useRef<HTMLDivElement>(null);
@@ -11,7 +12,7 @@ export function ProcessTimeline() {
   const lineH = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <div ref={ref} className="relative grid gap-12 md:grid-cols-[200px_1fr]">
+    <div ref={ref} className="relative grid gap-12 md:grid-cols-[200px_1fr] xl:grid-cols-[200px_1fr_380px]">
       <div className="relative">
         <div className="sticky top-32 hidden md:block">
           <div className="text-xs uppercase tracking-[0.25em] text-ink-soft">6 stappen</div>
@@ -42,6 +43,11 @@ export function ProcessTimeline() {
           </motion.li>
         ))}
       </ol>
+      <div className="relative hidden xl:block">
+        <div className="sticky top-32">
+          <ProcessVisual progress={scrollYProgress} />
+        </div>
+      </div>
     </div>
   );
 }
