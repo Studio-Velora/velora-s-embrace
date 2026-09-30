@@ -3,11 +3,11 @@ import { FEATURES } from "@/lib/site-content";
 
 function FeatCard({ title, sub }: { title: string; sub: string }) {
   return (
-    <div className="w-[240px] rounded-2xl border border-ink/10 border-t-2 border-t-accent bg-surface/40 p-5 transition-colors hover:bg-accent hover:text-accent-foreground">
-      <div className="font-display text-lg leading-tight text-ink transition-colors hover:text-accent-foreground">
+    <div className="flex h-[148px] w-[260px] flex-col justify-center overflow-hidden rounded-2xl border border-ink/10 border-t-2 border-t-accent bg-surface/40 p-5 transition-colors hover:bg-accent hover:text-accent-foreground">
+      <div className="line-clamp-2 font-display text-lg leading-tight text-ink transition-colors hover:text-accent-foreground">
         {title}
       </div>
-      <div className="mt-1 text-xs text-ink-soft">{sub}</div>
+      <div className="mt-1 line-clamp-2 text-xs text-ink-soft">{sub}</div>
     </div>
   );
 }
@@ -15,7 +15,7 @@ function FeatCard({ title, sub }: { title: string; sub: string }) {
 export function BentoFeatures() {
   // Verdeel de mogelijkheden over 3 rijen
   const rows: [string, string][][] = [[], [], []];
-  (FEATURES as [string, string][]).forEach((f, i) => {
+  (FEATURES as unknown as [string, string][]).forEach((f, i) => {
     rows[i % 3].push(f);
   });
 

@@ -15,17 +15,17 @@ import { AUDIENCES, PROMISES, SEO_STEPS, CONTACT } from "@/lib/site-content";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Studio Velora — Digitaal design & development studio" },
+      { title: "Novela Webdesign — Digitaal design & development studio" },
       {
         name: "description",
         content:
           "Snelle websites en webshops voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
       },
-      { property: "og:title", content: "Studio Velora — Digitaal design & development studio" },
+      { property: "og:title", content: "Novela Webdesign — Digitaal design & development studio" },
       {
         property: "og:description",
         content:
-          "We bouwen schaalbare digitale producten met doordacht design en zorgvuldige ontwikkeling.",
+          "Wij bouwen schaalbare digitale producten met doordacht design en zorgvuldige ontwikkeling.",
       },
     ],
   }),
@@ -46,7 +46,7 @@ function Home() {
           items={PARTNERS.map((p) => (
             <span
               key={p}
-              className="font-display text-3xl text-ink/40 transition-colors hover:text-accent md:text-5xl"
+              className="font-display text-3xl leading-[1.3] text-ink/40 transition-colors hover:text-accent md:text-5xl"
             >
               {p}
             </span>
@@ -72,14 +72,14 @@ function Home() {
             <div className="space-y-8">
               <Reveal>
                 <p className="text-lg text-ink-soft md:text-xl">
-                  Studio Velora is een digitaal design & development studio. Geen
+                  Novela Webdesign is een digitaal design & development studio. Geen
                   groot bedrijf met dure tussenpersonen, maar rechtstreeks contact
                   met degene die jouw website bouwt.
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="text-lg text-ink-soft md:text-xl">
-                  We bouwen websites en webshops die er niet alleen strak uitzien,
+                  Wij bouwen websites en webshops die er niet alleen strak uitzien,
                   maar ook echt werken: snel laden, goed gevonden op Google, en
                   ontworpen om bezoekers om te zetten in klanten.
                 </p>
@@ -126,7 +126,7 @@ function Home() {
             </div>
             <p className="max-w-md text-ink-soft">
               Van een eenvoudige contactpagina tot een volledig klantportaal met AI.
-              Een greep uit wat we bouwen.
+              Een greep uit wat wij bouwen.
             </p>
           </div>
         </div>
@@ -146,7 +146,7 @@ function Home() {
               to="/offerte"
               className="rounded-full border border-ink/20 px-6 py-3 text-sm text-ink hover:bg-ink hover:text-background"
             >
-              Vraag het ons
+              Vraag een prijsindicatie aan
             </Link>
           </Reveal>
         </div>
@@ -165,7 +165,7 @@ function Home() {
               </h2>
               <p className="mt-6 max-w-md text-ink-soft">
                 Een strakke website zonder bezoekers heeft weinig zin. Met SEO én GEO
-                zorgen we dat klanten je vinden wanneer ze zoeken naar wat jij
+                zorgen wij dat klanten je vinden wanneer ze zoeken naar wat jij
                 aanbiedt — op Google én in AI-zoekmachines zoals ChatGPT.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -241,14 +241,14 @@ function Home() {
             <p className="max-w-2xl text-lg text-ink-soft">
               <span className="font-semibold text-ink">Staat jouw branche er niet tussen?</span>{" "}
               Geen zorgen — dit is maar een greep. Of je nu een winkel, praktijk,
-              vereniging of iets compleet anders hebt: we helpen{" "}
+              vereniging of iets compleet anders hebt: wij helpen{" "}
               <span className="font-semibold text-accent">elk</span> bedrijf online groeien.
             </p>
             <Link
               to="/offerte"
               className="shrink-0 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-background transition-colors hover:bg-accent"
             >
-              Plan een gesprek →
+              Vraag een prijsindicatie aan →
             </Link>
           </Reveal>
         </div>
@@ -326,7 +326,7 @@ function Home() {
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-ink px-8 py-5 text-base text-background"
               >
                 <span className="absolute inset-0 -translate-y-full bg-accent transition-transform duration-500 group-hover:translate-y-0" />
-                <span className="relative">Plan een kennismakingsgesprek</span>
+                <span className="relative">Plan een gesprek</span>
                 <span className="relative">→</span>
               </Link>
             </Magnetic>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CircleCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const STEP_LABELS = ["Project", "Functies", "Timing", "Gegevens"];
+const STEP_LABELS = ["Project", "Functies", "Bedrijf", "Gegevens"];
 
 interface Props {
   step: number;

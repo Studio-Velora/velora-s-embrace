@@ -24,7 +24,7 @@ export function ProcessVisual({ progress }: { progress: MotionValue<number> }) {
         <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-ink/15" />
         <div className="ml-2 flex-1 rounded-full bg-background px-3 py-1.5 text-xs text-ink-soft">
-          <motion.span style={{ opacity: urlOpacity }}>studiovelora.nl</motion.span>
+          <motion.span style={{ opacity: urlOpacity }}>novelawebdesign.nl</motion.span>
         </div>
       </div>
 

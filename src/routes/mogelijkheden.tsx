@@ -45,7 +45,7 @@ const MOGELIJKHEDEN: Mog[] = [
   { icon: I.mail,        cat: "Automatisering",    title: "Geautomatiseerde e-mails",desc: "Bevestigingen, herinneringen en bedankmails verstuurt de site automatisch — taken die je nu handmatig doet.", ex: "Een tandarts stuurt automatisch een herinnering 24 uur vóór de afspraak." },
   { icon: I.chart,       cat: "Automatisering",    title: "Analytics",               desc: "Inzicht in hoeveel bezoekers je hebt, waar ze vandaan komen en welke pagina's werken. AVG-proof via Google Analytics.", ex: "Een ondernemer ziet dat 60% via Google op de contactpagina landt en past de tekst aan — meer aanvragen." },
   { icon: I.newsletter,  cat: "Automatisering",    title: "Nieuwsbrief",             desc: "Een aanmeldmodule op de site die direct koppelt aan Mailchimp of Brevo. Bouw een e-maillijst op en stuur gerichte mails.", ex: "Een winkel stuurt elke maand een mail met acties aan 800 abonnees — gratis via Brevo." },
-  { icon: I.geo,         cat: "Automatisering",    title: "AI-vindbaarheid (GEO)",   desc: "Geoptimaliseerd voor AI-zoekmachines zoals ChatGPT, Perplexity en Google AI Overviews — naast gewone SEO.", ex: "Als iemand in ChatGPT vraagt 'beste webdesigner Den Haag', verschijnt Studio Velora in het antwoord." },
+  { icon: I.geo,         cat: "Automatisering",    title: "AI-vindbaarheid (GEO)",   desc: "Geoptimaliseerd voor AI-zoekmachines zoals ChatGPT, Perplexity en Google AI Overviews — naast gewone SEO.", ex: "Als iemand in ChatGPT vraagt 'beste webdesigner Den Haag', verschijnt Novela Webdesign in het antwoord." },
   { icon: I.api,         cat: "Automatisering",    title: "API koppelingen",         desc: "Koppel de site aan je bestaande systemen: boekhoudpakket, CRM, agenda of voorraadbeheer. Alles gesynchroniseerd.", ex: "Een grossier koppelt zijn webshop aan zijn voorraadsysteem — de site toont altijd actuele voorraad." },
   { icon: I.edit,        cat: "Beheer & content",  title: "CMS — zelf aanpassen",   desc: "Pas zelf teksten, foto's en pagina's aan zonder technische kennis. Geen developer nodig voor elke wijziging.", ex: "Een restaurant past zelf het seizoensmenu aan: inloggen, tekst wijzigen, opslaan — binnen 2 minuten online." },
   { icon: I.blog,        cat: "Beheer & content",  title: "Blog & nieuws",           desc: "Publiceer artikelen, tips en nieuws om gevonden te worden op Google en bezoekers terug te laten komen.", ex: "Een klusser schrijft maandelijks een artikel over onderhoudstips — en komt daarmee bovenaan Google." },
@@ -58,33 +58,15 @@ const MOGELIJKHEDEN: Mog[] = [
 const CATS: Cat[] = ["Alle", "Klantcontact", "Verkoop & betalen", "Automatisering", "Beheer & content"];
 const IC_COLORS = ["bg-accent", "bg-ink", "bg-accent", "bg-ink"];
 
-/* Welke functies zitten standaard in de Zakelijke website (basis),
-   en welke vereisen het Premium-pakket. */
-const PREMIUM_TITLES = new Set<string>([
-  "Afspraakmodule",
-  "Online reserveringen",
-  "Live chat",
-  "AI chatbot",
-  "Webshop",
-  "iDEAL & online betalen",
-  "Factuurmodule",
-  "API koppelingen",
-  "CMS — zelf aanpassen",
-  "Klantportaal",
-  "Loginomgeving",
-  "Admin dashboard",
-]);
-const isPremium = (title: string) => PREMIUM_TITLES.has(title);
-
 export const Route = createFileRoute("/mogelijkheden")({
   head: () => ({
     meta: [
-      { title: "Mogelijkheden — Studio Velora" },
-      { name: "description", content: "Alles dat we kunnen bouwen: van afspraakmodules tot AI chatbots en klantportalen." },
-      { property: "og:title", content: "Mogelijkheden — Studio Velora" },
-      { property: "og:description", content: "Een overzicht van features die we toevoegen aan websites en webshops." },
+      { title: "Mogelijkheden — Novela Webdesign" },
+      { name: "description", content: "Alles dat wij kunnen bouwen: van afspraakmodules tot AI chatbots en klantportalen." },
+      { property: "og:title", content: "Mogelijkheden — Novela Webdesign" },
+      { property: "og:description", content: "Een overzicht van features die wij toevoegen aan websites en webshops." },
     ],
-    links: [{ rel: "canonical", href: "https://studiovelora.nl/mogelijkheden" }],
+    links: [{ rel: "canonical", href: "https://www.novelawebdesign.nl/mogelijkheden" }],
   }),
   component: Mogelijkheden,
 });
@@ -113,24 +95,8 @@ function Mogelijkheden() {
           <Reveal delay={0.3}>
             <p className="mt-8 max-w-xl text-lg text-ink-soft">
               Van een eenvoudige contactpagina tot een volledig klantportaal met AI.
-              Mis je iets? We bouwen het op maat.
+              Mis je iets? Wij bouwen het op maat.
             </p>
-          </Reveal>
-          <Reveal delay={0.4}>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-ink-soft">
-              <span className="inline-flex items-center gap-2">
-                <span className="rounded-full bg-ink/8 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-soft">
-                  Inbegrepen
-                </span>
-                zit in de <strong className="font-semibold text-ink">Zakelijke website</strong>
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="rounded-full bg-accent/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-accent">
-                  Premium
-                </span>
-                vereist het <strong className="font-semibold text-ink">Premium-pakket</strong>
-              </span>
-            </div>
           </Reveal>
         </div>
       </section>
@@ -171,19 +137,8 @@ function Mogelijkheden() {
           {filtered.map((m, i) => (
             <Reveal key={m.title} delay={(i % 3) * 0.05}>
               <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
-                <div className="flex items-start justify-between gap-3">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl text-background [&_svg]:h-6 [&_svg]:w-6 ${IC_COLORS[i % IC_COLORS.length]}`}>
-                    {m.icon}
-                  </div>
-                  {isPremium(m.title) ? (
-                    <span className="rounded-full bg-accent/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-accent">
-                      Premium
-                    </span>
-                  ) : (
-                    <span className="rounded-full bg-ink/8 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-ink-soft">
-                      Inbegrepen
-                    </span>
-                  )}
+                <div className={`flex h-12 w-12 items-center justify-center rounded-xl text-background [&_svg]:h-6 [&_svg]:w-6 ${IC_COLORS[i % IC_COLORS.length]}`}>
+                  {m.icon}
                 </div>
                 <div className="mt-4 text-xs uppercase tracking-[0.18em] text-accent">{m.cat}</div>
                 <h3 className="mt-1 font-display text-2xl text-ink">{m.title}</h3>
@@ -204,13 +159,13 @@ function Mogelijkheden() {
             Iets specifieks nodig?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-            Vertel ons wat je bedrijf nodig heeft. We bouwen het — gewoon zeggen wat het moet doen.
+            Vertel ons wat je bedrijf nodig heeft. Wij bouwen het — gewoon zeggen wat het moet doen.
           </p>
           <Link
             to="/offerte"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-sm text-background hover:bg-accent transition-colors"
           >
-            Bespreek je idee →
+            Vraag een prijsindicatie aan →
           </Link>
         </div>
       </section>

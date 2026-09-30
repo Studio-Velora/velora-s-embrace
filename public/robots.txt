@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://studiovelora.nl/sitemap.xml
+Sitemap: https://www.novelawebdesign.nl/sitemap.xml

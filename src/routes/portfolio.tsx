@@ -6,15 +6,15 @@ import { SectionLabel } from "@/components/site/Section";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Werk — Studio Velora" },
+      { title: "Werk — Novela Webdesign" },
       {
         name: "description",
-        content: "Een selectie van projecten die we bouwden voor ondernemers — met branche, technieken, doorlooptijd, investering en resultaat.",
+        content: "Een selectie van projecten die wij bouwden voor ondernemers — met branche, technieken, doorlooptijd, investering en resultaat.",
       },
-      { property: "og:title", content: "Werk — Studio Velora" },
-      { property: "og:description", content: "Cases en case studies van Studio Velora." },
+      { property: "og:title", content: "Werk — Novela Webdesign" },
+      { property: "og:description", content: "Cases en case studies van Novela Webdesign." },
     ],
-    links: [{ rel: "canonical", href: "https://studiovelora.nl/portfolio" }],
+    links: [{ rel: "canonical", href: "https://www.novelawebdesign.nl/portfolio" }],
   }),
   component: Portfolio,
 });
@@ -105,7 +105,7 @@ function Portfolio() {
           <Reveal delay={0.3}>
             <p className="mt-8 max-w-xl text-lg text-ink-soft">
               Elk project begint met een goed gesprek en eindigt met een website die
-              echt werkt. Per ondernemer: wat we bouwden, hoe lang het duurde, wat
+              echt werkt. Per ondernemer: wat wij bouwden, hoe lang het duurde, wat
               het kostte en wat het opleverde.
             </p>
           </Reveal>
@@ -226,14 +226,14 @@ function Portfolio() {
               Klaar voor een website <span className="italic">die werkt?</span>
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-accent-foreground/80">
-              Vertel ons over je bedrijf en we plannen een vrijblijvend gesprek.
+              Vertel ons over je bedrijf en wij sturen je een vrijblijvende prijsindicatie.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/offerte"
                 className="rounded-full bg-background px-8 py-4 text-sm font-semibold text-ink shadow-[0_0_0_6px_rgba(255,255,255,0.18)] transition-transform hover:scale-105"
               >
-                Plan een kennismakingsgesprek →
+                Vraag een prijsindicatie aan →
               </Link>
               <Link
                 to="/contact"

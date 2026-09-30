@@ -18,6 +18,7 @@ import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { Cursor } from "@/components/site/Cursor";
 import { SafeAreaFill } from "@/components/site/SafeAreaFill";
 import { CookieBanner } from "@/components/site/CookieBanner";
+import { SectionFade } from "@/components/site/SectionFade";
 
 function NotFoundComponent() {
   return (
@@ -83,13 +84,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // op de werkende kale testpagina, zodat Safari viewport-fit=cover bij de
       // eerste parse vastlegt. Hier dus NIET nogmaals opnemen.
       { name: "theme-color", content: "#fbfaf7" },
-      { title: "Studio Velora — Digitaal design & development studio" },
+      { title: "Novela Webdesign — Digitaal design & development studio" },
       {
         name: "description",
         content:
-          "Studio Velora bouwt snelle websites, webshops en merken voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
+          "Novela Webdesign bouwt snelle websites, webshops en merken voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
       },
-      { property: "og:title", content: "Studio Velora — Digitaal design & development studio" },
+      { property: "og:title", content: "Novela Webdesign — Digitaal design & development studio" },
       {
         property: "og:description",
         content:
@@ -97,18 +98,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Studio Velora — Digitaal design & development studio" },
-      { name: "description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
-      { property: "og:description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
-      { name: "twitter:description", content: "Velora's Embrace is a dynamic website showcasing a web development studio's creative capabilities." },
+      { name: "twitter:title", content: "Novela Webdesign — Digitaal design & development studio" },
+      { name: "description", content: "Novela Webdesign is a dynamic website showcasing a web development studio's creative capabilities." },
+      { property: "og:description", content: "Novela Webdesign is a dynamic website showcasing a web development studio's creative capabilities." },
+      { name: "twitter:description", content: "Novela Webdesign is a dynamic website showcasing a web development studio's creative capabilities." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4a4220ae-413f-4dc8-b7a6-ef86ba57ac9e/id-preview-2700496c--a4b518c4-718f-445e-b842-1a86bc0abe27.lovable.app-1781131761725.png" },
-      { property: "og:image", content: "https://studiovelora.nl/og-image.png" },
-      { name: "twitter:image", content: "https://studiovelora.nl/og-image.png" },
+      { property: "og:image", content: "https://www.novelawebdesign.nl/og-image.png" },
+      { name: "twitter:image", content: "https://www.novelawebdesign.nl/og-image.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "canonical", href: "https://studiovelora.nl/" },
+      { rel: "canonical", href: "https://www.novelawebdesign.nl/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -122,11 +123,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Studio Velora",
-          "description": "Studio Velora bouwt snelle websites, webshops en merken voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
-          "url": "https://studiovelora.nl",
+          "name": "Novela Webdesign",
+          "description": "Novela Webdesign bouwt snelle websites, webshops en merken voor ondernemers. Vaste prijzen, SEO inbegrepen, in 14 dagen live.",
+          "url": "https://www.novelawebdesign.nl",
           "telephone": "+31611277632",
-          "email": "info@studiovelora.nl",
+          "email": "info@novelawebdesign.nl",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Den Haag",
@@ -185,6 +186,7 @@ function RootComponent() {
       </main>
       <Footer />
       <CookieBanner />
+      <SectionFade />
     </QueryClientProvider>
   );
 }

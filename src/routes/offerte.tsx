@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal, RevealWords } from "@/components/site/Reveal";
 import { SectionLabel } from "@/components/site/Section";
@@ -7,17 +7,21 @@ import { Magnetic } from "@/components/site/Magnetic";
 import { ProgressIndicator } from "@/components/ui/progress-indicator";
 
 export const Route = createFileRoute("/offerte")({
+  validateSearch: (search: Record<string, unknown>): { pakket?: string; beheer?: string } => ({
+    pakket: typeof search.pakket === "string" ? search.pakket : undefined,
+    beheer: typeof search.beheer === "string" ? search.beheer : undefined,
+  }),
   head: () => ({
     meta: [
-      { title: "Offerte aanvragen — Studio Velora" },
+      { title: "Offerte aanvragen — Novela Webdesign" },
       {
         name: "description",
         content: "Vraag een vrijblijvende offerte aan. Geen verplichtingen, gewoon een eerlijk plan.",
       },
-      { property: "og:title", content: "Offerte aanvragen — Studio Velora" },
+      { property: "og:title", content: "Offerte aanvragen — Novela Webdesign" },
       { property: "og:description", content: "In 3 stappen een vrijblijvende offerte op maat." },
     ],
-    links: [{ rel: "canonical", href: "https://studiovelora.nl/offerte" }],
+    links: [{ rel: "canonical", href: "https://www.novelawebdesign.nl/offerte" }],
   }),
   component: Offerte,
 });
@@ -25,10 +29,8 @@ export const Route = createFileRoute("/offerte")({
 const PROJECT_TYPES: { label: string; desc: string }[] = [
   { label: "Website", desc: "Professionele zakelijke website — mobiel-vriendelijk en SEO-klaar opgeleverd." },
   { label: "Webshop", desc: "Online verkopen met productbeheer en betaling via iDEAL, Stripe & Mollie." },
-  { label: "SEO", desc: "Hoger in Google: zoekwoorden, techniek en lokale vindbaarheid." },
-  { label: "Branding", desc: "Logo, kleuren en typografie — een complete, herkenbare huisstijl." },
-  { label: "Onderhoud", desc: "Updates, beveiliging en kleine aanpassingen — zonder gedoe." },
-  { label: "Iets anders", desc: "Maatwerk of even sparren? Vertel het ons, we denken vrijblijvend mee." },
+  { label: "SEO", desc: "Beter te vinden in Google: zoekwoorden, techniek en lokale vindbaarheid." },
+  { label: "Iets anders", desc: "Maatwerk of even sparren? Vertel het ons, wij denken vrijblijvend mee." },
 ];
 const FEATURES = [
   "Afspraakmodule", "Online reserveringen", "Webshop / betalen", "Reviews",
@@ -36,24 +38,27 @@ const FEATURES = [
   "Loginomgeving", "Admin dashboard", "Nieuwsbrief", "Blog / nieuws",
   "Meertalig", "Analytics", "CMS / zelf aanpassen",
 ];
-const TIMELINES = ["Zo snel mogelijk", "Binnen 1 maand", "1–3 maanden", "Verkennend"];
 
 // ⚠️ PLAK HIER JE GRATIS WEB3FORMS ACCESS KEY (via https://web3forms.com — e-mail: shakir.studiovelora@gmail.com)
 // Zolang dit niet is ingevuld, werkt het formulier wel maar wordt er geen mail verstuurd.
 const WEB3FORMS_KEY = "d225a492-154d-4a96-8be2-eaa01d552447";
 
 function Offerte() {
-  const [step, setStep] = useState(0);
+  const search = Route.useSearch();
+  const vanuitPakketten = !!search.pakket;
+
+  const [step, setStep] = useState(vanuitPakketten ? 2 : 0);
   const [done, setDone] = useState(false);
   const [sending, setSending] = useState(false);
   const [data, setData] = useState({
-    type: "",
+    type: search.pakket?.includes("Webshop") ? "Webshop" : search.pakket ? "Website" : "",
     features: [] as string[],
-    timeline: "",
     name: "",
     email: "",
     company: "",
-    message: "",
+    message: vanuitPakketten
+      ? `Gekozen op de pakkettenpagina: ${search.pakket}${search.beheer ? ` + ${search.beheer}` : ""}.`
+      : "",
   });
 
   const total = 4;
@@ -82,15 +87,14 @@ function Offerte() {
   async function submit() {
     const payload = {
       access_key: WEB3FORMS_KEY,
-      subject: "Nieuwe gespreksaanvraag via studiovelora.nl",
-      from_name: "Studio Velora website",
+      subject: "Nieuwe gespreksaanvraag via novelawebdesign.nl",
+      from_name: "Novela Webdesign website",
       replyto: data.email,
       Naam: data.name,
       Email: data.email,
       Bedrijf: data.company,
       Project: data.type,
       Functies: data.features.join(", "),
-      Termijn: data.timeline,
       Bericht: data.message,
     };
     // Nog geen key ingevuld → toon succes zonder te versturen
@@ -132,7 +136,7 @@ function Offerte() {
   const canNext =
     (step === 0 && !!data.type) ||
     step === 1 ||
-    (step === 2 && !!data.timeline) ||
+    step === 2 ||
     (step === 3 && !!data.name && isValidEmail(data.email));
 
   return (
@@ -150,7 +154,7 @@ function Offerte() {
           <Reveal delay={0.2}>
             <p className="mt-6 max-w-xl text-lg text-ink-soft">
               Geen verplichtingen, geen verkooppraatjes — gewoon een eerlijk plan.
-              Een paar korte stappen, daarna plannen we een gesprek.
+              Een paar korte stappen, daarna plannen wij een gesprek.
             </p>
           </Reveal>
         </div>
@@ -158,6 +162,16 @@ function Offerte() {
 
       <section className="px-6 pb-32 lg:px-12">
         <div className="mx-auto max-w-[1100px] space-y-4">
+
+          {vanuitPakketten && !done && (
+            <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-accent/30 bg-accent/5 px-5 py-3 text-sm text-ink">
+              <span className="font-semibold text-accent">Gekozen:</span>
+              <span>
+                {search.pakket}
+                {search.beheer ? ` + ${search.beheer}` : ""}
+              </span>
+            </div>
+          )}
 
           {/* Stap content — alleen dit blok animeert per stap */}
           <div ref={formRef} className="overflow-hidden rounded-3xl border border-ink/10 bg-background">
@@ -177,7 +191,7 @@ function Offerte() {
                     </div>
                     <h2 className="mt-6 font-display text-4xl text-ink md:text-5xl">Dankjewel, {data.name.split(" ")[0] || "vriend"}!</h2>
                     <p className="mt-4 text-ink-soft">
-                      We hebben je aanvraag ontvangen en nemen binnen 24 uur contact op.
+                      Wij hebben je aanvraag ontvangen en sturen je binnen 24 uur een persoonlijke prijsindicatie.
                     </p>
                   </motion.div>
                 ) : (
@@ -191,7 +205,7 @@ function Offerte() {
                     {step === 0 && (
                       <div>
                         <h3 className="font-display text-3xl text-ink md:text-4xl">Wat voor project?</h3>
-                        <p className="mt-2 text-ink-soft">Kies wat het beste past — we adviseren je graag verder.</p>
+                        <p className="mt-2 text-ink-soft">Kies wat het beste past — wij adviseren je graag verder.</p>
                         <div className="mt-6 grid gap-3 sm:grid-cols-2">
                           {PROJECT_TYPES.map((t) => (
                             <button
@@ -214,7 +228,7 @@ function Offerte() {
                     {step === 1 && (
                       <div>
                         <h3 className="font-display text-3xl text-ink md:text-4xl">Welke functies wil je?</h3>
-                        <p className="mt-2 text-ink-soft">Optioneel — selecteer wat interessant is. Meerdere mogen, we denken graag mee.</p>
+                        <p className="mt-2 text-ink-soft">Optioneel — selecteer wat interessant is. Meerdere mogen, wij denken graag mee.</p>
                         <div className="mt-6 flex flex-wrap gap-2">
                           {FEATURES.map((f) => (
                             <Chip key={f} active={data.features.includes(f)} onClick={() => toggleFeature(f)}>{f}</Chip>
@@ -224,31 +238,25 @@ function Offerte() {
                     )}
 
                     {step === 2 && (
-                      <div className="space-y-10">
-                        <div>
-                          <h3 className="font-display text-3xl text-ink md:text-4xl">Wanneer wil je live?</h3>
-                          <div className="mt-6 flex flex-wrap gap-2">
-                            {TIMELINES.map((t) => (
-                              <Chip key={t} active={data.timeline === t} onClick={() => setData({ ...data, timeline: t })}>{t}</Chip>
-                            ))}
-                          </div>
-                        </div>
-                        <div>
-                          <h3 className="font-display text-3xl text-ink md:text-4xl">Vertel ons meer (optioneel)</h3>
-                          <textarea
-                            value={data.message}
-                            onChange={(e) => setData({ ...data, message: e.target.value })}
-                            rows={5}
-                            placeholder="Wat moet de site doen? Heb je voorbeelden of inspiratie?"
-                            className="mt-4 w-full resize-none rounded-2xl border border-ink/15 bg-surface/30 p-4 text-ink outline-none focus:border-accent"
-                          />
-                        </div>
+                      <div>
+                        <h3 className="font-display text-3xl text-ink md:text-4xl">Vertel ons over je bedrijf</h3>
+                        <p className="mt-2 text-ink-soft">
+                          Optioneel. Doelgroep, stijl, kleuren, een bestaand logo — deel gerust wat je
+                          al weet. De rest bespreken we gewoon in het gesprek.
+                        </p>
+                        <textarea
+                          value={data.message}
+                          onChange={(e) => setData({ ...data, message: e.target.value })}
+                          rows={6}
+                          placeholder="Bijvoorbeeld: wie zijn je klanten, hoe vinden ze je nu, en heb je al een huisstijl of logo?"
+                          className="mt-4 w-full resize-none rounded-2xl border border-ink/15 bg-surface/30 p-4 text-ink outline-none focus:border-accent"
+                        />
                       </div>
                     )}
 
                     {step === 3 && (
                       <div className="space-y-6">
-                        <h3 className="font-display text-3xl text-ink md:text-4xl">Waar bereiken we je?</h3>
+                        <h3 className="font-display text-3xl text-ink md:text-4xl">Waar bereiken wij je?</h3>
                         <div className="grid gap-4 md:grid-cols-2">
                           <Field label="Naam *" value={data.name} onChange={(v) => setData({ ...data, name: v })} />
                           <Field label="E-mail *" type="email" value={data.email} onChange={(v) => setData({ ...data, email: v })} error={emailError} />
@@ -284,18 +292,22 @@ function Offerte() {
   );
 }
 
-function Chip({ children, active, onClick }: { children: React.ReactNode; active: boolean; onClick: () => void }) {
+function Chip({ children, active, onClick }: { children: ReactNode; active: boolean; onClick: () => void }) {
   return (
-    <button
+    <motion.button
+      type="button"
       onClick={onClick}
-      className={`rounded-full border px-5 py-2.5 text-sm transition-all ${
+      animate={{ y: active ? 6 : 0 }}
+      whileTap={{ scale: 0.94 }}
+      transition={{ type: "spring", stiffness: 420, damping: 22 }}
+      className={`rounded-full border px-5 py-2.5 text-sm transition-colors ${
         active
-          ? "border-accent bg-accent text-accent-foreground"
+          ? "border-accent bg-accent text-accent-foreground shadow-sm shadow-accent/20"
           : "border-ink/15 bg-background text-ink hover:border-ink"
       }`}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }
 

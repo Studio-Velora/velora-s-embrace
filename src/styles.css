@@ -248,26 +248,6 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Marquee */
-@keyframes marquee-x {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes marquee-x-reverse {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-.animate-marquee {
-  animation: marquee-x var(--marquee-duration, 40s) linear infinite;
-}
-.animate-marquee-reverse {
-  animation: marquee-x-reverse var(--marquee-duration, 40s) linear infinite;
-}
-.marquee-pause:hover .animate-marquee,
-.marquee-pause:hover .animate-marquee-reverse {
-  animation-play-state: paused;
-}
-
 /* Grain overlay */
 .grain::after {
   content: "";

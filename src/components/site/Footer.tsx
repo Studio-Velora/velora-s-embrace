@@ -16,9 +16,9 @@ export function Footer() {
       <div className="mx-auto max-w-[1600px] px-6 pt-24 pb-12 lg:px-12">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <div className="font-display text-3xl">Studio Velora</div>
+            <div className="font-display text-3xl">Novela Webdesign</div>
             <p className="mt-4 max-w-sm text-sm text-background/70">
-              Digitaal design & development studio uit Nederland. We bouwen websites,
+              Digitaal design & development studio uit Nederland. Wij bouwen websites,
               webshops en merken die werken.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -40,7 +40,6 @@ export function Footer() {
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-background/40">Site</div>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-accent">Home</Link></li>
               {NAV.map((n) => (
                 <li key={n.to}><Link to={n.to} className="hover:text-accent">{n.label}</Link></li>
               ))}
@@ -60,19 +59,19 @@ export function Footer() {
 
         <div className="relative mt-20 select-none">
           <h2 className="font-display text-[18vw] leading-[0.85] tracking-tight text-background/10">
-            velora
+            novela
           </h2>
           <motion.h2
             aria-hidden
             style={{ width }}
             className="font-display absolute inset-0 overflow-hidden whitespace-nowrap text-[18vw] leading-[0.85] tracking-tight text-accent"
           >
-            velora
+            novela
           </motion.h2>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-background/10 pt-6 text-xs text-background/50">
-          <div>© {new Date().getFullYear()} Studio Velora — Alle rechten voorbehouden.</div>
+          <div>© {new Date().getFullYear()} Novela Webdesign — Alle rechten voorbehouden.</div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <a href="/privacybeleid" className="hover:text-background/80 transition-colors">Privacybeleid</a>
             <span>·</span>

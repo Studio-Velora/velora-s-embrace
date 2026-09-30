@@ -6,15 +6,15 @@ import { SEO_STEPS } from "@/lib/site-content";
 export const Route = createFileRoute("/seo")({
   head: () => ({
     meta: [
-      { title: "SEO — Studio Velora" },
+      { title: "SEO — Novela Webdesign" },
       {
         name: "description",
         content: "Gevonden worden op Google met SEO, GEO en AEO. Zoekwoordenonderzoek, technische SEO en lokale vindbaarheid.",
       },
-      { property: "og:title", content: "SEO — Studio Velora" },
+      { property: "og:title", content: "SEO — Novela Webdesign" },
       { property: "og:description", content: "Een stevige SEO-basis bij elke website, met opties voor doorgroeien." },
     ],
-    links: [{ rel: "canonical", href: "https://studiovelora.nl/seo" }],
+    links: [{ rel: "canonical", href: "https://www.novelawebdesign.nl/seo" }],
   }),
   component: SeoPage,
 });
@@ -36,8 +36,8 @@ function SeoPage() {
           <Reveal delay={0.3}>
             <p className="mt-8 max-w-2xl text-lg text-ink-soft">
               Een strakke website zonder bezoekers heeft weinig zin. Met SEO zorgen
-              we dat klanten je vinden wanneer ze zoeken — zonder dat je per klik
-              betaalt. En omdat steeds meer mensen zoeken via AI, richten we je site
+              wij dat klanten je vinden wanneer ze zoeken — zonder dat je per klik
+              betaalt. En omdat steeds meer mensen zoeken via AI, richten wij je site
               ook in op GEO en AEO: vindbaar in ChatGPT, Perplexity en Google's
               AI-overzichten. Bij elke website is een stevige basis inbegrepen.
             </p>
@@ -45,12 +45,12 @@ function SeoPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20 lg:px-12">
-        <div className="mx-auto grid max-w-[1600px] gap-12 md:grid-cols-2">
+      <section className="overflow-hidden px-6 py-20 lg:px-12">
+        <div className="mx-auto grid max-w-[1600px] gap-x-8 gap-y-16 md:grid-cols-2">
           {SEO_STEPS.map(([n, t, b], i) => (
-            <div key={n} className="relative overflow-hidden">
-              <ParallaxY amount={40 + i * 8}>
-                <div className="absolute -top-6 left-0 select-none font-display text-[8rem] leading-none text-accent/15 md:text-[10rem]">{n}</div>
+            <div key={n} className="relative">
+              <ParallaxY amount={16 + i * 3} className="pointer-events-none absolute -top-6 left-0">
+                <div className="select-none font-display text-[8rem] leading-none text-accent/15 md:text-[10rem]">{n}</div>
               </ParallaxY>
               <Reveal className="relative pt-14">
                 <h3 className="font-display text-2xl text-ink md:text-3xl">{t}</h3>
@@ -99,17 +99,17 @@ function SeoPage() {
             <h2 className="font-display text-5xl leading-[1.05] md:text-7xl xl:text-8xl">
               Verder groeien?{" "}
               <br />
-              <span className="italic text-accent">We helpen.</span>
+              <span className="italic text-accent">Wij helpen.</span>
             </h2>
             <p className="mt-6 max-w-xl text-background/70">
-              Doorlopende SEO, content, Search Console-analyses en social ads — we
+              Doorlopende SEO, content, Search Console-analyses en social ads — wij
               denken mee over wat past bij jouw doel en budget.
             </p>
             <Link
               to="/offerte"
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-9 py-5 text-base font-semibold text-accent-foreground"
             >
-              Vraag een quickscan →
+              Vraag een prijsindicatie aan →
             </Link>
           </div>
         </div>
